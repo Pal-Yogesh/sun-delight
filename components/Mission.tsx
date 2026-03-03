@@ -64,11 +64,11 @@ export default function MissionSection() {
                             transition={{ duration: 0.6 }}
                             className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6"
                         >
-                            Elegant cookies for <br />
-                            <span className="text-brand-primary line-through decoration-4 decoration-brand-secondary mr-2">ordinary</span>
+                            What they say <br />
+                            <span className="text-brand-primary line-through decoration-4 decoration-brand-secondary mr-2">about our</span>
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">
-                                sophisticated
-                            </span> palates.
+                                
+                            </span> cookies.
                         </motion.h2>
 
                         <motion.p
