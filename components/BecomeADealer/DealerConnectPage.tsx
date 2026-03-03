@@ -63,7 +63,7 @@ export default function DealerConnectPage() {
     <div ref={containerRef} className="bg-[#fffdf9] text-[#3d1f00] font-sans">
 
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[99vh] lg:min-h-[85vh] flex items-center pt-20 overflow-hidden">
         <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
           <div className="absolute top-20 left-[10%] w-96 h-96 bg-[#fde8c0] rounded-full blur-[120px] opacity-40" />
           <div className="absolute bottom-10 right-[10%] w-[500px] h-[500px] bg-[#c05621]/10 rounded-full blur-[100px]" />
@@ -106,7 +106,7 @@ export default function DealerConnectPage() {
       </section>
 
       {/* WHY PARTNER */}
-      <section className="py-24 bg-white rounded-t-[5rem] shadow-[-20px_-20px_60px_rgba(0,0,0,0.02)]">
+      <section className="py-14 md:py-24 bg-white border-[#ead5c9] border-t rounded-t-[5rem] shadow-[-20px_-20px_60px_rgba(0,0,0,0.02)]">
         <div className="container mx-auto px-6 max-w-[1300px]">
           <div className="mb-20 text-center">
             <h2 className="text-4xl lg:text-6xl font-black font-['Playfair_Display'] mb-6">
@@ -146,8 +146,8 @@ export default function DealerConnectPage() {
       </section>
 
       {/* VISION & WHO CAN PARTNER */}
-      <section className="py-32 overflow-hidden">
-        <div className="container mx-auto px-6 max-w-[1300px]">
+      <section className="py-12 md:py-32 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 max-w-[1300px]">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
 
             <div className="relative">

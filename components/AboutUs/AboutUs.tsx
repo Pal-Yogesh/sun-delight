@@ -77,7 +77,7 @@ export default function AboutHero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#fffdf9] to-[#fff5e6] py-20 lg:py-32"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#fffdf9] to-[#fff5e6] pt-28 pb-14 sm:pt-0 sm:pb-0 lg:py-32"
     >
       {/* ── Background Elements ── */}
       <motion.div
@@ -112,7 +112,7 @@ export default function AboutHero() {
            </motion.div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
           
           {/* ── Left Content Area ── */}
           <div className="lg:w-1/2 flex flex-col z-10" ref={textContainerRef}>
@@ -124,7 +124,7 @@ export default function AboutHero() {
               <span className="italic text-[#c05621]">A New Taste of Joy.</span>
             </h1>
 
-            <p className="reveal-text text-lg text-[#9c6644] leading-relaxed mb-10 border-l-4 border-[#c05621] pl-6">
+            <p className="reveal-text text-lg text-[#9c6644] leading-relaxed mb-6 lg:mb-10 border-l-4 border-[#c05621] pl-6">
               Sun Delight is a proud FMCG venture of the Suntek Group. With deep roots in industrial excellence, we bring our forward-looking vision into the fast-moving consumer goods space, beginning with biscuits crafted for everyday delight.
             </p>
 
@@ -148,7 +148,7 @@ export default function AboutHero() {
                  ))}
                </div>
 
-               <div className="min-h-[220px]">
+               <div className="min-h-0">
                  <AnimatePresence mode="wait">
                    {activeTab === 0 ? (
                      <motion.div
@@ -206,7 +206,7 @@ export default function AboutHero() {
           </div>
 
           {/* ── Right Image & Floating Cards Area ── */}
-          <div className="lg:w-1/2 relative flex justify-center items-center mt-12 lg:mt-0 h-[500px] lg:h-[600px]">
+          <div className="hidden lg:w-1/2 relative lg:flex justify-center items-center mt-8 lg:mt-0 h-auto lg:h-[600px]">
             
             {/* Main Interactive Image */}
             <motion.div 

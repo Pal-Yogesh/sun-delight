@@ -257,19 +257,46 @@ function ImageMosaic() {
   const inView = useInView(ref, { once: true, margin: "-15% 0px" });
 
   return (
-    <div ref={ref} className="relative h-full min-h-[580px]">
+    <div ref={ref} className="relative h-full min-h-[300px] lg:min-h-[580px]">
       {/* ── MAIN IMAGE BLOCK ── */}
-      <Image src="/cookie-hero.png" width={1000} height={1000} alt="cookie" className=" w-full h-[50%]" />
+      <Image src="/cookie-hero.png" width={1000} height={1000} alt="cookie" className="w-full h-[50%]" />
 
-      {/* ── ACCENT IMAGE (bottom left overlap) ── */}
-          <Image src="/cookie-lifestyle.png" width={1000} height={1000} alt="cookie" className=" w-full h-[35%] mt-16" />
+      {/* ── ACCENT IMAGE ── */}
+      <Image src="/cookie-lifestyle.png" width={1000} height={1000} alt="cookie" className="w-full h-[35%] mt-16" />
 
+      {/* ── INLINE STATS — mobile/tablet only ── */}
+      <div className="flex gap-3 mt-6 lg:hidden">
+        <div className="flex-1 flex items-center gap-3 rounded-2xl px-4 py-3"
+          style={{ background: "rgba(255,253,249,0.95)", border: "1px solid rgba(245,166,35,0.2)", boxShadow: "0 8px 24px rgba(61,31,0,0.08)" }}>
+          <div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg, #fbd38d, #ed8936)",
+            display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.1rem", flexShrink: 0 }}>🏆</div>
+          <div>
+            <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#c05621", lineHeight: 1, fontFamily: "Playfair Display, serif" }}>
+              <AnimNumber to={15} suffix="K+" />
+            </div>
+            <div style={{ fontSize: "0.6rem", color: "#9c6644", marginTop: 2 }}>Happy Customers</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 rounded-2xl px-4 py-3"
+          style={{ background: "rgba(61,31,0,0.88)", boxShadow: "0 8px 24px rgba(61,31,0,0.18)" }}>
+          <div>
+            <div style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.4rem", color: "#ed8936", lineHeight: 1 }}>98%</div>
+            <div style={{ fontSize: "0.6rem", color: "rgba(253,232,192,0.6)", letterSpacing: "0.1em", marginTop: 2, textTransform: "uppercase" }}>Satisfaction</div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center rounded-full w-14 h-14 shrink-0"
+          style={{ background: "linear-gradient(135deg, #c05621, #ed8936)", boxShadow: "0 6px 18px rgba(192,86,33,0.4)" }}>
+          <div style={{ fontSize: "0.4rem", color: "rgba(255,255,255,0.7)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Since</div>
+          <div style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.1rem", color: "#fff", lineHeight: 1 }}>2014</div>
+        </div>
+      </div>
 
-      {/* ── FLOATING STAT CARD ── */}
+      {/* ── FLOATING STAT CARD — desktop only ── */}
       <motion.div
         initial={{ opacity: 0, y: 20, scale: 0.85 }}
         animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.7 }}
+        className="hidden lg:block"
       >
         <motion.div
           animate={{ y: [0, -10, 0] }}
@@ -288,18 +315,9 @@ function ImageMosaic() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <div
-              style={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "12px",
-                background: "linear-gradient(135deg, #fbd38d, #ed8936)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1.3rem",
-              }}
-            >
+            <div style={{ width: "40px", height: "40px", borderRadius: "12px",
+              background: "linear-gradient(135deg, #fbd38d, #ed8936)",
+              display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem" }}>
               🏆
             </div>
             <div>
@@ -312,33 +330,21 @@ function ImageMosaic() {
         </motion.div>
       </motion.div>
 
-      {/* ── EXPERIENCE BADGE ── */}
+      {/* ── EXPERIENCE BADGE — desktop only ── */}
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={inView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.9, type: "spring" }}
-        style={{
-          position: "absolute",
-          right: "-2%",
-          bottom: "38%",
-          zIndex: 10,
-        }}
+        className="hidden lg:block"
+        style={{ position: "absolute", right: "-2%", bottom: "38%", zIndex: 10 }}
       >
         <motion.div
           animate={{ rotate: [0, 360] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          style={{
-            width: "80px",
-            height: "80px",
-            borderRadius: "50%",
+          style={{ width: "80px", height: "80px", borderRadius: "50%",
             background: "linear-gradient(135deg, #c05621, #ed8936)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            boxShadow: "0 8px 30px rgba(192,86,33,0.45)",
-            cursor: "default",
-          }}
+            display: "flex", alignItems: "center", justifyContent: "center",
+            flexDirection: "column", boxShadow: "0 8px 30px rgba(192,86,33,0.45)", cursor: "default" }}
         >
           <motion.div
             animate={{ rotate: [0, -360] }}
@@ -397,9 +403,9 @@ export default function AboutSection() {
       style={{
         position: "relative",
         overflow: "hidden",
-        padding: "120px 0",
         background: "linear-gradient(160deg, #fffdf9 0%, #fff8f0 50%, #fef3e2 100%)",
       }}
+      className="py-24  md:py-20 lg:py-[120px]"
     >
       {/* ── BACKGROUND TEXTURE ── */}
       <motion.div
@@ -585,15 +591,7 @@ export default function AboutSection() {
         </div>
 
         {/* ── MAIN GRID ── */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "80px",
-            alignItems: "start",
-            marginTop: "60px",
-          }}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[80px] items-start mt-10 lg:mt-[60px]">
           {/* LEFT COLUMN */}
           <div>
             {/* Description */}
