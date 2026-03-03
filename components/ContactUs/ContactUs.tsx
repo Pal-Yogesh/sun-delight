@@ -170,18 +170,6 @@ export default function ContactUs() {
         <div className="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#fde8c0]/30 rounded-full blur-[120px] pointer-events-none -z-10" />
       </div>
     </section>
-
-
-  
-<div className="flex justify-center items-center pb-24 bg-[#fffdf9]">
-
-       <div className=" w-[70%] p-8  rounded-2xl bg-[#fff8f0] border-l-4 border-[#c05621] relative overflow-hidden group">
-             <div className="absolute -right-4 -bottom-4 text-7xl opacity-5 group-hover:scale-110 transition-transform">🍪</div>
-             <p className="text-[#3d1f00] font-['Playfair_Display'] text-xl italic font-medium leading-snug">
-            "At <span className="text-[#c05621] font-bold">Sun Delight</span>, we believe strong partnerships are the foundation of lasting success. Backed by the legacy, scale, and operational excellence of the <span className="text-[#c05621] font-bold">Suntek Group, Sun Delight is entering the FMCG space</span> with a clear focus on quality, consistency, and nationwide reach.
-We invite distributors, super stockists, and trade partners to grow with us as we build one of India&apos;s most trusted biscuit and snacking brands."</p>
-          </div>
-</div>
     </>
   );
 }

@@ -94,13 +94,17 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
               const cy = 150
               const inner = 68
               const outer = 90 + (i % 2 === 0 ? 15 : 0)
+              const x1 = Math.round((cx + Math.cos(angle) * inner) * 1000) / 1000
+              const y1 = Math.round((cy + Math.sin(angle) * inner) * 1000) / 1000
+              const x2 = Math.round((cx + Math.cos(angle) * outer) * 1000) / 1000
+              const y2 = Math.round((cy + Math.sin(angle) * outer) * 1000) / 1000
               return (
                 <line
                   key={i}
-                  x1={cx + Math.cos(angle) * inner}
-                  y1={cy + Math.sin(angle) * inner}
-                  x2={cx + Math.cos(angle) * outer}
-                  y2={cy + Math.sin(angle) * outer}
+                  x1={x1}
+                  y1={y1}
+                  x2={x2}
+                  y2={y2}
                   stroke="rgba(230,170,60,0.25)"
                   strokeWidth="1.5"
                   strokeLinecap="round"
