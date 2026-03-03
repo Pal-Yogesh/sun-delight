@@ -63,13 +63,13 @@ export default function DealerConnectPage() {
     <div ref={containerRef} className="bg-[#fffdf9] text-[#3d1f00] font-sans">
 
       {/* HERO */}
-      <section className="relative min-h-[99vh] lg:min-h-[85vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
         <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
           <div className="absolute top-20 left-[10%] w-96 h-96 bg-[#fde8c0] rounded-full blur-[120px] opacity-40" />
           <div className="absolute bottom-10 right-[10%] w-[500px] h-[500px] bg-[#c05621]/10 rounded-full blur-[100px]" />
         </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10 max-w-[1300px]">
+        <div className="container mx-auto px-6 relative z-10 max-w-[1300px] pt-7 sm:pt-0">
           <div className="max-w-[1000px]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
