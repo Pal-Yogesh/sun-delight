@@ -1,25 +1,30 @@
-"use client"
+"use client";
 
-import { useState, useCallback } from "react"
-import { LoadingScreen } from "./Loader/LoadingScreen"
+import { useState, useCallback } from "react";
+import SunLoader from "./Loader/SunLoader";
+import Navbar from "./Navbar";
+import FooterSection from "./Footer";
 
 export function PageWrapper({ children }: { children: React.ReactNode }) {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const handleComplete = useCallback(() => {
-    setLoading(false)
-  }, [])
+    setLoading(false);
+  }, []);
 
   return (
     <>
-      {loading && <LoadingScreen onComplete={handleComplete} />}
+      {loading && <SunLoader onComplete={handleComplete} />}
+
       <div
         className={`transition-opacity duration-500 ${
-          loading ? "opacity-0" : "opacity-100"
+          loading ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
+        <Navbar />
         {children}
+        <FooterSection />
       </div>
     </>
-  )
+  );
 }

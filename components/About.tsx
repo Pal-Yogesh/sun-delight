@@ -12,6 +12,7 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -258,171 +259,11 @@ function ImageMosaic() {
   return (
     <div ref={ref} className="relative h-full min-h-[580px]">
       {/* ── MAIN IMAGE BLOCK ── */}
-      <motion.div
-        initial={{ opacity: 0, x: 50, scale: 0.92 }}
-        animate={inView ? { opacity: 1, x: 0, scale: 1 } : {}}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-        style={{
-          y: y1,
-          position: "absolute",
-          right: 0,
-          top: 0,
-          width: "78%",
-          aspectRatio: "4/5",
-          borderRadius: "2.5rem",
-          overflow: "hidden",
-          boxShadow: "0 40px 100px rgba(61,31,0,0.18), 0 8px 30px rgba(0,0,0,0.08)",
-        }}
-      >
-        {/* Cookie illustration BG */}
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            background:
-              "linear-gradient(145deg, #f5c842 0%, #e8a020 30%, #c77b18 60%, #a0522d 100%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          {/* Texture rings */}
-          {[0.9, 0.75, 0.6, 0.45, 0.3].map((s, i) => (
-            <div
-              key={i}
-              style={{
-                position: "absolute",
-                borderRadius: "50%",
-                border: "1px solid rgba(255,255,255,0.1)",
-                top: `${(1 - s) * 50}%`,
-                left: `${(1 - s) * 50}%`,
-                right: `${(1 - s) * 50}%`,
-                bottom: `${(1 - s) * 50}%`,
-              }}
-            />
-          ))}
-          {/* Highlight */}
-          <div
-            style={{
-              position: "absolute",
-              top: "8%",
-              left: "12%",
-              width: "40%",
-              height: "32%",
-              borderRadius: "50%",
-              background:
-                "radial-gradient(ellipse, rgba(255,248,180,0.45) 0%, transparent 70%)",
-              filter: "blur(16px)",
-            }}
-          />
-          {/* Giant cookie emoji */}
-          <motion.div
-            animate={{ rotate: [0, 5, -3, 0], scale: [1, 1.04, 0.98, 1] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            style={{ fontSize: "10rem", filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.25))", zIndex: 2 }}
-          >
-            🍪
-          </motion.div>
-          {/* Floating chip dots */}
-          {[
-            { top: "15%", left: "18%", s: 18 },
-            { top: "25%", right: "14%", s: 14 },
-            { bottom: "30%", left: "10%", s: 16 },
-            { bottom: "20%", right: "20%", s: 20 },
-            { top: "55%", left: "22%", s: 12 },
-          ].map((pos, i) => (
-            <motion.div
-              key={i}
-              animate={{ y: [0, -8, 0], rotate: [0, 15, 0] }}
-              transition={{ duration: 3 + i * 0.7, repeat: Infinity, delay: i * 0.5 }}
-              style={{
-                position: "absolute",
-                ...pos,
-                width: pos.s,
-                height: pos.s,
-                borderRadius: "50%",
-                background: "rgba(40,10,0,0.55)",
-                boxShadow: "inset 1px 1px 3px rgba(255,200,100,0.15)",
-              }}
-            />
-          ))}
-        </div>
-      </motion.div>
+      <Image src="/cookie-hero.png" width={1000} height={1000} alt="cookie" className=" w-full h-[50%]" />
 
       {/* ── ACCENT IMAGE (bottom left overlap) ── */}
-      <motion.div
-        initial={{ opacity: 0, x: -30, y: 30 }}
-        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
-        style={{
-          y: y2,
-          rotate: rotate1,
-          position: "absolute",
-          left: 0,
-          bottom: "4%",
-          width: "52%",
-          aspectRatio: "1",
-          borderRadius: "2rem",
-          overflow: "hidden",
-          boxShadow: "0 24px 70px rgba(61,31,0,0.16)",
-          border: "4px solid rgba(255,253,249,0.9)",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(135deg, #3d1f00 0%, #6b3a1f 50%, #c05621 100%)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "8px",
-            padding: "20px",
-          }}
-        >
-          {/* Orbiting cookie emojis */}
-          <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            style={{ position: "absolute", inset: 0 }}
-          >
-            {COOKIE_EMOJIS.map((e, i) => {
-              return (
-                <motion.span
-                  key={i}
-                  animate={{ rotate: [0, -360] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  style={{
-                    position: "absolute",
-                    top: COOKIE_EMOJI_POSITIONS[i].top,
-                    left: COOKIE_EMOJI_POSITIONS[i].left,
-                    transform: "translate(-50%, -50%)",
-                    fontSize: "1.2rem",
-                    opacity: 0.6,
-                  }}
-                >
-                  {e}
-                </motion.span>
-              );
-            })}
-          </motion.div>
+          <Image src="/cookie-lifestyle.png" width={1000} height={1000} alt="cookie" className=" w-full h-[35%] mt-16" />
 
-          <motion.div
-            animate={{ scale: [1, 1.08, 1] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            style={{ fontSize: "3.5rem", zIndex: 2 }}
-          >
-            ☀️
-          </motion.div>
-          <div style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.1rem", color: "#fbd38d", zIndex: 2, textAlign: "center", lineHeight: 1.2 }}>
-            Since<br />
-            <span style={{ fontSize: "2rem" }}>2014</span>
-          </div>
-        </div>
-      </motion.div>
 
       {/* ── FLOATING STAT CARD ── */}
       <motion.div
@@ -435,7 +276,7 @@ function ImageMosaic() {
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
           style={{
             position: "absolute",
-            top: "12%",
+            top: "1%",
             left: "-4%",
             background: "rgba(255,253,249,0.95)",
             backdropFilter: "blur(16px)",

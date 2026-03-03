@@ -542,11 +542,11 @@ export default function Navbar() {
         >
           {/* Logo */}
         
-                         <Image src="/sunbrand.jpeg" width={1000} height={1000} alt="logo" className="w-28 h-12 rounded-xl" />
+          <Image src="/logo-sun.png" width={1000} height={1000} alt="logo" className="w-28 h-12 rounded-xl" />
 
 
           {/* Desktop Nav */}
-          <motion.ul className="hidden lg:flex items-center gap-2 list-none m-0 p-0">
+          <motion.ul className="hidden lg:flex items-center gap-8 list-none m-0 p-0">
             {NAV_ITEMS.filter((i) => i.label !== "Contact Us").map((item, index) => (
               <NavLink key={item.label} item={item} index={index} />
             ))}
