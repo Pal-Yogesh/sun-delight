@@ -187,7 +187,7 @@ export default function HeroVideo() {
               className="flex flex-col items-center"
             >
               {/* Tag pill */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 16, scale: 0.92 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, ease: ease1 }}
@@ -207,7 +207,7 @@ export default function HeroVideo() {
                   Pitam Pura, New Delhi · 7AM – 9PM Daily
                 </span>
                 <span className="w-1 h-1 rounded-full bg-[#F5A623] animate-pulse" />
-              </motion.div>
+              </motion.div> */}
 
               {/* Heading — SplitText animates chars */}
               <h1
