@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-brand-primary: #D97706; /* Amber-600 */
+  --color-brand-secondary: #FBBF24; /* Amber-400 */
+  --color-brand-accent: #B45309; /* Amber-700 */
+  --color-brand-dark: #451A03; /* Amber-950 */
+  --color-brand-light: #FEF3C7; /* Amber-100 */
+  --color-brand-bg: #FFFBEB; /* Amber-50 */
+  
+  --font-heading: var(--font-outfit), sans-serif;
+  --font-body: var(--font-geist-sans), sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-dark font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight text-brand-dark;
+  }
+}
+
+/* Custom Utilities for Hide Scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
