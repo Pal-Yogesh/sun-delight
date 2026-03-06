@@ -271,7 +271,7 @@ export default function HeroVideo() {
       </motion.div>
 
       {/* ── SCROLL INDICATOR ── */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showContent && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -293,7 +293,7 @@ export default function HeroVideo() {
             />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* ── CORNER DECORATION ── */}
       <motion.div

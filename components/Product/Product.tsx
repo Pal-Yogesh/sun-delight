@@ -18,6 +18,7 @@ interface SKU {
 interface Product {
   id: string;
   emoji: string;
+  img: string;
   name: string;
   tagline: string;
   badge: string;
@@ -33,7 +34,7 @@ interface Product {
 // ─── Data ────────────────────────────────────────────────────────────────────
 const SD: Product[] = [
   {
-    id: "sd1", emoji: "🍪",
+    id: "sd1", emoji: "🍪", img: "/buiscuit/1.jpeg",
     name: "Butter Biscuit", tagline: "Golden, Buttery & Irresistible",
     badge: "BESTSELLER", badgeBg: "linear-gradient(135deg,#c05621,#ed8936)",
     chip: "🧈 Pure Butter",
@@ -47,7 +48,7 @@ const SD: Product[] = [
     ],
   },
   {
-    id: "sd2", emoji: "🍬",
+    id: "sd2", emoji: "🍬", img: "/buiscuit/2.jpeg",
     name: "Cream Biscuit", tagline: "Soft Centre, Crisp Shell",
     badge: "POPULAR", badgeBg: "linear-gradient(135deg,#ed8936,#f5c842)",
     chip: "🍦 Rich Cream Fill",
@@ -61,7 +62,7 @@ const SD: Product[] = [
     ],
   },
   {
-    id: "sd3", emoji: "🍫",
+    id: "sd3", emoji: "🍫", img: "/buiscuit/3.jpeg",
     name: "Bourbon Biscuit", tagline: "Double Chocolate Decadence",
     badge: "FAVOURITE", badgeBg: "linear-gradient(135deg,#3d1f00,#6b3a1f)",
     chip: "🍫 Belgian Cocoa",
@@ -143,9 +144,9 @@ function ProductCard({ p, index, onOpen, onContact }: { p: Product; index: numbe
               style={{ width: size, height: size, border: `1px solid ${ringColor}`,
                 animation: `spin ${[28, 18, 12][i] + index * [3, 2, 1][i]}s linear infinite ${i === 1 ? "reverse" : ""}` }} />
           ))}
-          <div className="relative z-[3] transition-transform duration-500 group-hover:-translate-y-4 group-hover:rotate-12 group-hover:scale-125"
-            style={{ filter: "drop-shadow(0 8px 18px rgba(0,0,0,.16))", fontSize: "6.5rem", lineHeight: 1 }}>
-            {p.emoji}
+          <div className="relative z-[3] transition-transform duration-500 group-hover:-translate-y-4 group-hover:scale-110 w-[160px] h-[160px]"
+            style={{ filter: "drop-shadow(0 8px 18px rgba(0,0,0,.16))" }}>
+            <img src={p.img} alt={p.name} className="w-full h-full object-contain rounded-full" />
           </div>
           {/* Shine sweep */}
           <div className="absolute inset-0 pointer-events-none z-[4] overflow-hidden">
@@ -230,9 +231,9 @@ function Modal({ product, onClose, onContact }: { product: Product | null; onClo
               style={{ width: size, height: size, border: `1px solid ${ringColor}`,
                 animation: `spin ${[36, 24, 16][i]}s linear infinite ${i === 1 ? "reverse" : ""}` }} />
           ))}
-          <div className="relative z-[3] text-[8rem] sm:text-[9.5rem]"
+          <div className="relative z-[3] w-[180px] h-[180px] sm:w-[210px] sm:h-[210px]"
             style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,.24))", animation: "bob 3.8s ease-in-out infinite" }}>
-            {product.emoji}
+            <img src={product.img} alt={product.name} className="w-full h-full object-cover rounded-full" />
           </div>
           {/* Weight chips */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-[5] flex-wrap justify-center">

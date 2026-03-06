@@ -13,6 +13,8 @@ import {
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import Image from "next/image";
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -24,6 +26,7 @@ interface Product {
   tagline: string;
   desc: string;
   emoji: string;
+  image: string;
   badge: string;
   discount: string;
   originalPrice: string;
@@ -42,6 +45,7 @@ const PRODUCTS: Product[] = [
     tagline: "Golden & Irresistible",
     desc: "Rich molten caramel swirled into a buttery base — chewy, golden, utterly addictive.",
     emoji: "🍯",
+    image: "/buiscuit/1.jpeg",
     badge: "BESTSELLER",
     discount: "Disc Up To 50% Off",
     originalPrice: "₹240",
@@ -57,6 +61,7 @@ const PRODUCTS: Product[] = [
     tagline: "Dark & Decadent",
     desc: "Double Belgian chocolate in every bite — intense, velvety, and dangerously good.",
     emoji: "🍫",
+    image: "/buiscuit/2.jpeg",
     badge: "50% OFF",
     discount: "Disc Up To 50% Off",
     originalPrice: "₹260",
@@ -72,6 +77,7 @@ const PRODUCTS: Product[] = [
     tagline: "Classic & Loaded",
     desc: "Loaded with premium dark chocolate chips in every single bite — the classic reimagined.",
     emoji: "🫐",
+    image: "/buiscuit/3.jpeg",
     badge: "NEW",
     discount: "Disc Up To 50% Off",
     originalPrice: "₹280",
@@ -87,6 +93,39 @@ const PRODUCTS: Product[] = [
     tagline: "Fruity & Bright",
     desc: "Tart raspberry jam nestled in golden shortbread — fruity, fresh, and utterly divine.",
     emoji: "🍓",
+    image: "/buiscuit/4.jpeg",
+    badge: "LIMITED",
+    discount: "Disc Up To 50% Off",
+    originalPrice: "₹300",
+    salePrice: "₹150",
+    color: "#9b1b30",
+    accentColor: "#f5a623",
+    bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
+    tag: "Sweet & Tangy",
+  },
+  {
+    id: 5,
+    name: "Raspberry Cookie",
+    tagline: "Fruity & Bright",
+    desc: "Tart raspberry jam nestled in golden shortbread — fruity, fresh, and utterly divine.",
+    emoji: "🍓",
+    image: "/buiscuit/5.jpeg",
+    badge: "LIMITED",
+    discount: "Disc Up To 50% Off",
+    originalPrice: "₹300",
+    salePrice: "₹150",
+    color: "#9b1b30",
+    accentColor: "#f5a623",
+    bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
+    tag: "Sweet & Tangy",
+  },
+  {
+    id: 6,
+    name: "Raspberry Cookie",
+    tagline: "Fruity & Bright",
+    desc: "Tart raspberry jam nestled in golden shortbread — fruity, fresh, and utterly divine.",
+    emoji: "🍓",
+    image: "/buiscuit/6.jpeg",
     badge: "LIMITED",
     discount: "Disc Up To 50% Off",
     originalPrice: "₹300",
@@ -97,31 +136,6 @@ const PRODUCTS: Product[] = [
     tag: "Sweet & Tangy",
   },
 ];
-
-// ─── Magnetic cursor hook ─────────────────────────────────────────────────────
-function useMagnetic(strength = 0.35) {
-  const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const sx = useSpring(x, { stiffness: 300, damping: 25 });
-  const sy = useSpring(y, { stiffness: 300, damping: 25 });
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const move = (e: MouseEvent) => {
-      const r = el.getBoundingClientRect();
-      x.set((e.clientX - r.left - r.width / 2) * strength);
-      y.set((e.clientY - r.top - r.height / 2) * strength);
-    };
-    const leave = () => { x.set(0); y.set(0); };
-    el.addEventListener("mousemove", move);
-    el.addEventListener("mouseleave", leave);
-    return () => { el.removeEventListener("mousemove", move); el.removeEventListener("mouseleave", leave); };
-  }, [strength]);
-
-  return { ref, sx, sy };
-}
 
 // ─── Discount Badge ───────────────────────────────────────────────────────────
 function DiscountBadge({ text, color }: { text: string; color: string }) {
@@ -250,28 +264,36 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             />
           ))}
 
-          {/* Emoji */}
+          {/* Product image */}
           <motion.div
-            animate={{
-              y: hovered ? -14 : 0,
-              rotate: hovered ? 12 : 0,
-              scale: hovered ? 1.18 : 1,
-              filter: hovered
-                ? "drop-shadow(0 20px 30px rgba(0,0,0,0.3))"
-                : "drop-shadow(0 6px 12px rgba(0,0,0,0.15))",
-            }}
+            // animate={{
+            //   y: hovered ? -14 : 0,
+            //   rotate: hovered ? 12 : 0,
+            //   scale: hovered ? 1.08 : 1,
+            // }}
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%,-50%)",
-              fontSize: "6rem",
-              zIndex: 3,
-              lineHeight: 1,
-            }}
+            // style={{
+            //   position: "absolute",
+            //   top: "50%",
+            //   left: "50%",
+            //   transform: "translate(-50%,-50%)",
+            //   width: "160px",
+            //   height: "160px",
+            //   zIndex: 3,
+            // }}
           >
-            {product.emoji}
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className=""
+              // style={{
+              //   filter: hovered
+              //     ? "drop-shadow(0 20px 30px rgba(0,0,0,0.3))"
+              //     : "drop-shadow(0 6px 12px rgba(0,0,0,0.15))",
+              //   transition: "filter 0.3s",
+              // }}
+            />
           </motion.div>
 
           {/* Shine sweep on hover */}
@@ -289,7 +311,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           />
 
           {/* Bottom tag chip */}
-          <motion.div
+          {/* <motion.div
             animate={{ y: hovered ? 0 : 8, opacity: hovered ? 1 : 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             style={{
@@ -312,7 +334,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             }}
           >
             {product.tag}
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* ── Card Body ── */}
@@ -639,11 +661,17 @@ function ProductListRow({ product, index }: { product: Product; index: number })
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "2.4rem",
             flexShrink: 0,
+            position: "relative",
+            overflow: "hidden",
           }}
         >
-          {product.emoji}
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-cover"
+          />
         </motion.div>
         {/* Info */}
         <div style={{ flex: 1 }}>
