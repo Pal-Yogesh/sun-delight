@@ -245,12 +245,12 @@ export default function HeroVideo() {
                 transition={{ delay: 0.75, duration: 0.7, ease: ease1 }}
                 className="flex flex-wrap items-center justify-center gap-4"
               >
-                <MagneticButton href="#products" primary>
+                <MagneticButton href="/product" primary>
                   <span>Explore Cookies</span>
                   <span>🍪</span>
                 </MagneticButton>
                 <motion.a
-                  href="#about"
+                  href="/about-us"
                   whileHover={{ x: 4 }}
                   className="flex items-center gap-2 text-[#fffdf9]/65 hover:text-[#F5A623] transition-colors text-sm font-semibold tracking-wide group"
                   style={{ fontFamily: "DM Sans, sans-serif" }}
