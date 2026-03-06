@@ -2,16 +2,17 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { 
-  Handshake, 
-  ShieldCheck, 
-  Award, 
-  BadgePercent, 
-  Truck, 
-  LayoutTemplate, 
-  Megaphone, 
-  ChevronRight, 
-  MapPin
+import {
+  Handshake,
+  ShieldCheck,
+  Award,
+  BadgePercent,
+  Truck,
+  LayoutTemplate,
+  Megaphone,
+  ChevronRight,
+  MapPin,
+  Zap,
 } from "lucide-react";
 
 const WHY_PARTNER = [
@@ -24,7 +25,11 @@ const WHY_PARTNER = [
     title: "High-Quality Products",
     icon: <Award className="w-6 h-6" />,
     desc: "Our biscuits are crafted using carefully selected ingredients, standardized recipes, and modern manufacturing processes to ensure consistent taste, superior freshness, and uniform quality across batches.",
-    bullets: ["Consistent taste and texture", "Superior freshness and shelf life", "Uniform quality across batches"],
+    bullets: [
+      "Consistent taste and texture",
+      "Superior freshness and shelf life",
+      "Uniform quality across batches",
+    ],
   },
   {
     title: "Competitive Pricing & Healthy Margins",
@@ -35,7 +40,11 @@ const WHY_PARTNER = [
     title: "Reliable Supply Chain",
     icon: <Truck className="w-6 h-6" />,
     desc: "With manufacturing operations at Rajpura (Punjab) and a robust logistics network, we ensure:",
-    bullets: ["Timely dispatches", "Minimal stock-outs", "Scalable supply as demand grows"],
+    bullets: [
+      "Timely dispatches",
+      "Minimal stock-outs",
+      "Scalable supply as demand grows",
+    ],
   },
   {
     title: "Attractive Packaging & Branding",
@@ -46,22 +55,38 @@ const WHY_PARTNER = [
     title: "Marketing & Sales Support",
     icon: <Megaphone className="w-6 h-6" />,
     desc: "We actively support our partners through:",
-    bullets: ["In-store visibility material", "Launch and promotional schemes", "Sales team coordination", "Region-wise expansion planning"],
+    bullets: [
+      "In-store visibility material",
+      "Launch and promotional schemes",
+      "Sales team coordination",
+      "Region-wise expansion planning",
+    ],
   },
 ];
 
-const PARTNER_TYPES = ["Super Stockists", "Distributors", "Wholesalers", "Modern Trade & Institutional Buyers"];
+const PARTNER_TYPES = [
+  "Super Stockists",
+  "Distributors",
+  "Wholesalers",
+  "Modern Trade & Institutional Buyers",
+];
 
-const VISION_POINTS = ["Expanding product portfolio", "Increasing brand recognition", "Long-term business stability"];
+const VISION_POINTS = [
+  "Expanding product portfolio",
+  "Increasing brand recognition",
+  "Long-term business stability",
+];
 
 export default function DealerConnectPage() {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <div ref={containerRef} className="bg-[#fffdf9] text-[#3d1f00] font-sans">
-
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
         <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
@@ -77,7 +102,9 @@ export default function DealerConnectPage() {
               className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#c05621]/5 border border-[#c05621]/10 mb-8"
             >
               <Handshake className="w-4 h-4 text-[#c05621]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c05621]">Dealer Connect</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c05621]">
+                Dealer Connect
+              </span>
             </motion.div>
 
             <motion.h1
@@ -87,7 +114,9 @@ export default function DealerConnectPage() {
               className="text-4xl lg:text-[5rem] font-black leading-[0.9] font-['Playfair_Display'] mb-10"
             >
               Partner with a Growing <br />
-              <span className="text-[#c05621] italic">FMCG Brand from the House of Suntek.</span>
+              <span className="text-[#c05621] italic">
+                FMCG Brand from the House of Suntek.
+              </span>
             </motion.h1>
 
             <motion.p
@@ -96,10 +125,12 @@ export default function DealerConnectPage() {
               transition={{ delay: 0.3 }}
               className="text-xl lg:text-2xl text-[#9c6644] max-w-3xl leading-relaxed"
             >
-              At Sun Delight, we believe strong partnerships are the foundation of lasting success.
-              Backed by the legacy, scale, and operational excellence of the{" "}
-              <span className="text-[#3d1f00] font-bold">Suntek Group</span>, we are entering the FMCG
-              space with a clear focus on quality, consistency, and nationwide reach.
+              At Sun Delight, we believe strong partnerships are the foundation
+              of lasting success. Backed by the legacy, scale, and operational
+              excellence of the{" "}
+              <span className="text-[#3d1f00] font-bold">Suntek Group</span>, we
+              are entering the FMCG space with a clear focus on quality,
+              consistency, and nationwide reach.
             </motion.p>
           </div>
         </div>
@@ -110,10 +141,12 @@ export default function DealerConnectPage() {
         <div className="container mx-auto px-6 max-w-[1300px]">
           <div className="mb-20 text-center">
             <h2 className="text-4xl lg:text-6xl font-black font-['Playfair_Display'] mb-6">
-              Why Partner with <span className="text-[#c05621]">Sun Delight?</span>
+              Why Partner with{" "}
+              <span className="text-[#c05621]">Sun Delight?</span>
             </h2>
             <p className="text-[#9c6644] max-w-2xl mx-auto">
-              We bring operational excellence, process discipline, and a quality mindset to everyday consumer products.
+              We bring operational excellence, process discipline, and a quality
+              mindset to everyday consumer products.
             </p>
           </div>
 
@@ -127,12 +160,19 @@ export default function DealerConnectPage() {
                 <div className="w-14 h-14 rounded-2xl bg-[#fde8c0]/30 flex items-center justify-center text-[#c05621] mb-8 group-hover:bg-[#c05621] group-hover:text-white transition-all duration-500">
                   {item.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 font-['Playfair_Display']">{item.title}</h3>
-                <p className="text-sm text-[#9c6644] leading-relaxed">{item.desc}</p>
+                <h3 className="text-2xl font-bold mb-4 font-['Playfair_Display']">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#9c6644] leading-relaxed">
+                  {item.desc}
+                </p>
                 {item.bullets && (
                   <ul className="mt-4 space-y-2">
                     {item.bullets.map((b, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-[#9c6644]">
+                      <li
+                        key={i}
+                        className="flex items-center gap-2 text-sm text-[#9c6644]"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#c05621] shrink-0" />
                         {b}
                       </li>
@@ -149,23 +189,33 @@ export default function DealerConnectPage() {
       <section className="py-12 md:py-32 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 max-w-[1300px]">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-
             <div className="relative">
-              <div className="absolute -top-10 -left-10 text-[15rem] font-black text-[#fde8c0]/30 -z-10 font-['Playfair_Display']">"</div>
+              <div className="absolute -top-10 -left-10 text-[15rem] font-black text-[#fde8c0]/30 -z-10 font-['Playfair_Display']">
+                "
+              </div>
               <h2 className="text-4xl lg:text-5xl font-black font-['Playfair_Display'] mb-8">
                 Our Vision for <br /> Trade Partners
               </h2>
               <p className="text-lg text-[#9c6644] mb-6 leading-relaxed italic">
-                "We don't just appoint distributors — we build long-term partnerships. Our goal is to create a strong, sustainable distribution network that benefits every stakeholder in the value chain."
+                "We don't just appoint distributors — we build long-term
+                partnerships. Our goal is to create a strong, sustainable
+                distribution network that benefits every stakeholder in the
+                value chain."
               </p>
               <p className="text-sm text-[#9c6644] mb-10 leading-relaxed">
-                As Sun Delight expands across India, our channel partners grow alongside us with:
+                As Sun Delight expands across India, our channel partners grow
+                alongside us with:
               </p>
               <div className="space-y-4">
                 {VISION_POINTS.map((text, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm border border-[#3d1f00]/5">
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-sm border border-[#3d1f00]/5"
+                  >
                     <ChevronRight className="text-[#c05621] w-5 h-5 shrink-0" />
-                    <span className="font-bold text-[#3d1f00] text-sm uppercase tracking-wide">{text}</span>
+                    <span className="font-bold text-[#3d1f00] text-sm uppercase tracking-wide">
+                      {text}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -173,91 +223,155 @@ export default function DealerConnectPage() {
 
             <div className="bg-[#b76410] p-12 lg:p-20 rounded-[4rem] text-white relative overflow-hidden">
               <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-[#c05621]/20 rounded-full blur-3xl" />
-              <h3 className="text-3xl font-bold font-['Playfair_Display'] mb-4 text-orange-200">Who Can Partner With Us?</h3>
+              <h3 className="text-3xl font-bold font-['Playfair_Display'] mb-4 text-orange-200">
+                Who Can Partner With Us?
+              </h3>
               <p className="text-orange-100/60 mb-12 leading-relaxed">
-                We are looking to collaborate with partners who share our commitment to quality, integrity, and growth.
+                We are looking to collaborate with partners who share our
+                commitment to quality, integrity, and growth.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {PARTNER_TYPES.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 pb-4 border-b border-white/10 group">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-4 pb-4 border-b border-white/10 group"
+                  >
                     <div className="w-2 h-2 rounded-full bg-white group-hover:scale-150 transition-transform shrink-0" />
-                    <span className="font-bold tracking-widest text-xs uppercase">{item}</span>
+                    <span className="font-bold tracking-widest text-xs uppercase">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* CONNECT FORM */}
-      {/* <section className="py-24 container mx-auto px-6 max-w-[1300px]">
-        <div className="bg-[#c05621] rounded-[4rem] p-10 lg:p-24 text-white relative overflow-hidden">
-          <div className="absolute top-[-10%] right-[-5%] w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-[-10%] left-[-5%] w-64 h-64 bg-black/10 rounded-full blur-3xl" />
-
-          <div className="grid lg:grid-cols-12 gap-16 relative z-10">
-            <div className="lg:col-span-5">
-              <h2 className="text-5xl font-black font-['Playfair_Display'] mb-6">Let's Grow Together</h2>
-              <p className="text-orange-100/80 mb-8 leading-relaxed">
-                Join hands with Sun Delight and be part of a fast-growing FMCG journey rooted in trust, quality, and performance. Connect with us today to explore partnership opportunities.
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest opacity-60">Manufacturing Unit</p>
-                  <p className="font-bold text-sm">Rajpura, Punjab</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 bg-white rounded-[3rem] p-8 lg:p-12 text-[#3d1f00]">
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest ml-2 opacity-50">Full Name</label>
-                    <input type="text" className="w-full bg-[#fffdf9] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#c05621] outline-none" placeholder="Your Name" />
+      <section className="py-16 md:py-0 container mx-auto px-4 sm:px-6 max-w-[1200px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+          <div className="lg:sticky lg:top-32">
+            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black font-['Playfair_Display'] mb-6 lg:mb-8">
+              Who are <br className="hidden sm:block" /> we looking <br className="hidden sm:block" />{" "}
+              <span className="text-[#c05621]">for?</span>
+            </h2>
+            <div className="space-y-4 sm:space-y-8">
+              {["Super Stockists", "Distributors", "Modern Trade Buyers"].map(
+                (type, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between py-4 sm:py-6 border-b border-[#3d1f00]/10 group cursor-pointer"
+                  >
+                    <span className="text-base sm:text-xl font-bold group-hover:translate-x-4 transition-transform group-hover:text-[#c05621]">
+                      {type}
+                    </span>
+                    <Zap className="w-5 h-5 text-[#c05621] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest ml-2 opacity-50">Firm Name</label>
-                    <input type="text" className="w-full bg-[#fffdf9] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#c05621] outline-none" placeholder="Your Business Ltd." />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest ml-2 opacity-50">Email Address</label>
-                    <input type="email" className="w-full bg-[#fffdf9] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#c05621] outline-none" placeholder="you@example.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest ml-2 opacity-50">Location / City</label>
-                    <input type="text" className="w-full bg-[#fffdf9] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#c05621] outline-none" placeholder="City, State" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest ml-2 opacity-50">Partnership Interest</label>
-                  <select className="w-full bg-[#fffdf9] border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#c05621] outline-none appearance-none">
-                    <option>Super Stockist</option>
-                    <option>Distributor</option>
-                    <option>Wholesaler</option>
-                    <option>Modern Trade / Institutional Buyer</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest ml-2 opacity-50">Tell us about your reach</label>
-                  <textarea rows={3} className="w-full bg-[#fffdf9] border-none rounded-3xl px-6 py-4 focus:ring-2 focus:ring-[#c05621] outline-none resize-none" placeholder="Mention your distribution network size, region coverage..." />
-                </div>
-                <button className="w-full py-5 bg-[#3d1f00] text-white rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] hover:bg-black transition-all shadow-xl">
-                  Connect with Sun Delight
-                </button>
-              </form>
+                ),
+              )}
             </div>
           </div>
+
+          <div className="bg-white p-6 sm:p-8 lg:p-16 rounded-[2rem] sm:rounded-[3rem] lg:rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(61,31,0,0.1)] border border-[#3d1f00]/5">
+            <div className="mb-8 lg:mb-12">
+              <h4 className="text-xl sm:text-2xl font-bold mb-2">Let&apos;s Connect</h4>
+              <p className="text-[#9c6644] text-sm">
+                Fill in your business details below.
+              </p>
+            </div>
+
+            <form className="space-y-7 sm:space-y-10">
+              <div className="relative group">
+                <input
+                  type="text"
+                  placeholder=" "
+                  className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-3 sm:py-4 outline-none focus:border-[#c05621] transition-colors"
+                />
+                <label className="absolute left-0 top-3 sm:top-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-5 sm:peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
+                  Your Name
+                </label>
+              </div>
+
+              <div className="relative group">
+                <input
+                  type="text"
+                  placeholder=" "
+                  className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-3 sm:py-4 outline-none focus:border-[#c05621] transition-colors"
+                />
+                <label className="absolute left-0 top-3 sm:top-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-5 sm:peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
+                  Firm Name
+                </label>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-10">
+                <div className="relative group">
+                  <input
+                    type="text"
+                    placeholder=" "
+                    className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-3 sm:py-4 outline-none focus:border-[#c05621] transition-colors"
+                  />
+                  <label className="absolute left-0 top-3 sm:top-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-5 sm:peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
+                    City
+                  </label>
+                </div>
+
+                <div className="relative group">
+                  <input
+                    type="tel"
+                    placeholder=" "
+                    className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-4 outline-none focus:border-[#c05621] transition-colors"
+                  />
+                  <label className="absolute left-0 top-4 text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
+                    Mobile
+                  </label>
+                </div>
+              </div>
+
+              <div className="relative group">
+                <select
+                  defaultValue=""
+                  className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-4 outline-none focus:border-[#c05621] transition-colors text-sm font-bold uppercase tracking-widest appearance-none cursor-pointer text-[#3d1f00]"
+                >
+                  <option value="" disabled className="text-[#9c6644]/50">
+                    Partnership Interest
+                  </option>
+                  <option>Super Stockist</option>
+                  <option>Distributor</option>
+                  <option>Wholesaler</option>
+                  <option>Modern Trade / Institutional Buyer</option>
+                </select>
+                <ChevronRight className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9c6644]/50 rotate-90 pointer-events-none" />
+              </div>
+
+              <button className="w-full bg-[#c05621] text-white py-6 rounded-full font-black uppercase tracking-[0.3em] text-[10px] hover:bg-[#3d1f00] transition-colors shadow-2xl shadow-[#c05621]/20">
+                Submit Inquiry
+              </button>
+            </form>
+          </div>
         </div>
-      </section> */}
+      </section>
+
+      <section className="py-16 text-center relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <p className="text-[#c05621] font-bold uppercase tracking-widest mb-6 text-sm italic">
+            Sun Delight — Khushiyon ka Biscuit
+          </p>
+          <h3 className="text-4xl lg:text-7xl font-['Playfair_Display'] font-black max-w-4xl mx-auto leading-tight">
+            Ready to bring{" "}
+            <span className="underline decoration-[#c05621] decoration-wavy underline-offset-8">
+              sunshine
+            </span>{" "}
+            to every home?
+          </h3>
+        </div>
+        {/* Background Decorative Blur */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-t from-[#fde8c0] to-transparent opacity-30 -z-10" />
+      </section>
 
       <footer className="pb-20 text-center opacity-40">
-        <p className="text-[10px] font-bold uppercase tracking-[0.5em]">Sun Delight — Made with care. Delivered with trust.</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.5em]">
+          Sun Delight — Made with care. Delivered with trust.
+        </p>
       </footer>
     </div>
   );
