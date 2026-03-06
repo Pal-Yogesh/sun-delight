@@ -34,7 +34,7 @@ interface Product {
 // ─── Data ────────────────────────────────────────────────────────────────────
 const SD: Product[] = [
   {
-    id: "sd1", emoji: "🍪", img: "/buiscuit/1.jpeg",
+    id: "sd1", emoji: "🍪", img: "/buiscuit2/1.png",
     name: "Butter Biscuit", tagline: "Golden, Buttery & Irresistible",
     badge: "BESTSELLER", badgeBg: "linear-gradient(135deg,#c05621,#ed8936)",
     chip: "🧈 Pure Butter",
@@ -48,7 +48,7 @@ const SD: Product[] = [
     ],
   },
   {
-    id: "sd2", emoji: "🍬", img: "/buiscuit/2.jpeg",
+    id: "sd2", emoji: "🍬", img: "/buiscuit2/2.png",
     name: "Cream Biscuit", tagline: "Soft Centre, Crisp Shell",
     badge: "POPULAR", badgeBg: "linear-gradient(135deg,#ed8936,#f5c842)",
     chip: "🍦 Rich Cream Fill",
@@ -62,7 +62,7 @@ const SD: Product[] = [
     ],
   },
   {
-    id: "sd3", emoji: "🍫", img: "/buiscuit/3.jpeg",
+    id: "sd3", emoji: "🍫", img: "/buiscuit2/3.png",
     name: "Bourbon Biscuit", tagline: "Double Chocolate Decadence",
     badge: "FAVOURITE", badgeBg: "linear-gradient(135deg,#3d1f00,#6b3a1f)",
     chip: "🍫 Belgian Cocoa",
