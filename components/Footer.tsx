@@ -63,7 +63,7 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  href="#about"
+                  href="/about-us"
                   className="text-brand-light/70 hover:text-white transition-colors duration-200"
                 >
                   About Us
@@ -71,7 +71,7 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  href="#products"
+                  href="/product"
                   className="text-brand-light/70 hover:text-white transition-colors duration-200"
                 >
                   Products
@@ -120,7 +120,7 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="text-brand-light/70 hover:text-white transition-colors duration-200"
                 >
                   Easy Contact
