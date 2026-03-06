@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function MissionSection() {
     return (
@@ -13,47 +12,35 @@ export default function MissionSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    {/* Images / Visuals */}
-                    <div className="relative h-[500px] w-full flex justify-center items-center">
-                        {/* Background Blob */}
-                        <motion.div
-                            className="absolute w-80 h-80 bg-brand-secondary/40 rounded-full blur-3xl"
-                            animate={{
-                                scale: [1, 1.2, 1],
-                                rotate: [0, 90, 0],
-                            }}
-                            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    {/* Video */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8 }}
+                        className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl z-20"
+                    >
+                        <video
+                            src="/video.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
                         />
-
-                        {/* Front Image */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8 }}
-                            className="relative w-full max-w-[400px] aspect-square z-20"
-                        >
-                            <Image
-                                src="/chocochips_cookie_1772478447627.png"
-                                alt="Classic Chocolate Chip Cookie"
-                                fill
-                                className="object-contain drop-shadow-xl"
-                            />
-                        </motion.div>
-
-                        {/* Floating Element */}
+                        {/* Floating badge */}
                         <motion.div
                             initial={{ y: 0 }}
-                            animate={{ y: [-15, 15, -15] }}
+                            animate={{ y: [-10, 10, -10] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -top-10 -right-10 w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-xl border border-brand-primary/10 z-30"
+                            className="absolute top-4 right-4 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl border border-brand-primary/10 z-30"
                         >
                             <div className="text-center">
-                                <p className="text-brand-primary font-bold text-3xl">100%</p>
-                                <p className="text-xs text-brand-dark/70 font-semibold uppercase tracking-wider">Natural</p>
+                                <p className="text-brand-primary font-bold text-2xl">100%</p>
+                                <p className="text-[10px] text-brand-dark/70 font-semibold uppercase tracking-wider">Natural</p>
                             </div>
                         </motion.div>
-                    </div>
+                    </motion.div>
 
                     {/* Text Content */}
                     <div className="flex flex-col justify-center">

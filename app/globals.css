@@ -16,6 +16,7 @@
 @layer base {
   body {
     @apply bg-brand-bg text-brand-dark font-body antialiased;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23c05621'/%3E%3Ccircle cx='10' cy='11' r='2.5' fill='%23fff8f0' opacity='.85'/%3E%3Ccircle cx='20' cy='10' r='2' fill='%23fff8f0' opacity='.85'/%3E%3Ccircle cx='22' cy='19' r='2.5' fill='%23fff8f0' opacity='.85'/%3E%3Ccircle cx='13' cy='21' r='2' fill='%23fff8f0' opacity='.85'/%3E%3Ccircle cx='16' cy='15' r='1.5' fill='%23fff8f0' opacity='.85'/%3E%3C/svg%3E") 16 16, auto;
   }
   
   h1, h2, h3, h4, h5, h6 {
