@@ -883,7 +883,7 @@ export default function RecipesSection() {
           </div>
 
           {/* Grid Layout */}
-          <div className="grid grid-cols-2 gap-[22px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[22px]">
             {/* Hero Card */}
             {/* <div className="col-span-1 row-span-2"> */}
             <RecipeCard
