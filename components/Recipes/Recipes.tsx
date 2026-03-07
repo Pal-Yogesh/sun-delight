@@ -408,15 +408,11 @@ function RecipeModal({
 }) {
   useEffect(() => {
     document.body.style.overflow = recipe ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [recipe]);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
@@ -429,17 +425,8 @@ function RecipeModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 1000,
-            background: "rgba(20,5,0,0.8)",
-            backdropFilter: "blur(14px)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: 16,
-          }}
+          className="fixed inset-0 z-[1000] flex items-center justify-center p-3 sm:p-4"
+          style={{ background: "rgba(20,5,0,0.8)", backdropFilter: "blur(14px)" }}
         >
           <motion.div
             initial={{ scale: 0.87, y: 32, opacity: 0 }}
@@ -447,319 +434,93 @@ function RecipeModal({
             exit={{ scale: 0.9, y: 20, opacity: 0 }}
             transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            style={{
-              background: "#fffdf9",
-              borderRadius: 30,
-              width: "100%",
-              maxWidth: 800,
-              maxHeight: "92vh",
-              overflow: "hidden",
-              display: "flex",
-              boxShadow:
-                "0 50px 130px rgba(0,0,0,0.44), 0 0 0 1px rgba(245,166,35,0.13)",
-            }}
+            className="bg-[#fffdf9] rounded-[24px] sm:rounded-[30px] w-full max-w-[800px] max-h-[92vh] overflow-hidden flex flex-col md:flex-row"
+            style={{ boxShadow: "0 50px 130px rgba(0,0,0,0.44), 0 0 0 1px rgba(245,166,35,0.13)" }}
           >
-            {/* Left image panel */}
-            <div
-              style={{
-                width: 290,
-                flexShrink: 0,
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
-              <motion.div
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: recipe.bgGrad,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {[270, 202, 134].map((s, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{ rotate: i % 2 === 0 ? [0, 360] : [360, 0] }}
-                    transition={{
-                      duration: 28 + i * 7,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                    style={{
-                      position: "absolute",
-                      width: s,
-                      height: s,
-                      borderRadius: "50%",
-                      border: `1px solid ${recipe.ringColor}`,
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%,-50%)",
-                    }}
-                  />
-                ))}
-                <motion.div
-                  animate={{ scale: [1, 1.04, 1] }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  style={{ position: "absolute", inset: 0, zIndex: 3 }}
-                >
-                  <img
-                    src={recipe.img}
-                    alt={recipe.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </motion.div>
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "linear-gradient(to right,rgba(61,31,0,0.22),rgba(61,31,0,0.01))",
-                  }}
+            {/* Image panel — top on mobile, left on md+ */}
+            <div className="relative overflow-hidden h-[220px] sm:h-[260px] md:h-auto md:w-[290px] shrink-0">
+              <div className="absolute inset-0" style={{ background: recipe.bgGrad }}>
+                <img
+                  src={recipe.img}
+                  alt={recipe.title}
+                  className="w-full h-full object-cover"
                 />
-              </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-transparent to-[rgba(61,31,0,0.18)]" />
+              </div>
 
               {/* Number badge */}
               <div
-                style={{
-                  position: "absolute",
-                  top: 18,
-                  left: 18,
-                  zIndex: 5,
-                  width: 40,
-                  height: 40,
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg,#c05621,#ed8936)",
-                  color: "#fff",
-                  fontFamily: "'Playfair Display',serif",
-                  fontSize: "1rem",
-                  fontWeight: 900,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 4px 14px rgba(192,86,33,0.5)",
-                }}
+                className="absolute top-4 left-4 z-[5] w-10 h-10 rounded-full flex items-center justify-center text-white font-black"
+                style={{ background: "linear-gradient(135deg,#c05621,#ed8936)", fontFamily: "'Playfair Display',serif", fontSize: "1rem", boxShadow: "0 4px 14px rgba(192,86,33,0.5)" }}
               >
                 {recipe.num}
               </div>
               {/* Type badge */}
               <div
-                style={{
-                  position: "absolute",
-                  bottom: 18,
-                  left: 18,
-                  zIndex: 5,
-                  padding: "5px 15px",
-                  borderRadius: 50,
-                  background: "rgba(255,253,249,0.88)",
-                  backdropFilter: "blur(10px)",
-                  fontSize: "0.62rem",
-                  fontWeight: 700,
-                  color: "#c05621",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  border: "1px solid rgba(245,166,35,0.28)",
-                }}
+                className="absolute bottom-4 left-4 z-[5] px-4 py-1 rounded-full backdrop-blur-md"
+                style={{ background: "rgba(255,253,249,0.88)", fontSize: "0.62rem", fontWeight: 700, color: "#c05621", letterSpacing: "0.12em", textTransform: "uppercase", border: "1px solid rgba(245,166,35,0.28)" }}
               >
                 {recipe.type}
               </div>
+
+              {/* Close — on image for mobile */}
+              <motion.button
+                whileHover={{ rotate: 90, scale: 1.1 }}
+                onClick={onClose}
+                className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full flex items-center justify-center text-[#3d1f00] cursor-pointer"
+                style={{ background: "rgba(255,253,249,0.9)", backdropFilter: "blur(10px)", border: "1px solid rgba(61,31,0,0.1)", fontSize: "1rem" }}
+              >
+                ✕
+              </motion.button>
             </div>
 
-            {/* Right content */}
-            <div
-              style={{ flex: 1, overflowY: "auto", padding: "30px 32px 32px" }}
-            >
-              {/* Close */}
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  marginBottom: 4,
-                }}
-              >
-                <motion.button
-                  whileHover={{ rotate: 90, scale: 1.1 }}
-                  onClick={onClose}
-                  style={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: "50%",
-                    background: "rgba(255,253,249,0.9)",
-                    backdropFilter: "blur(10px)",
-                    border: "1px solid rgba(61,31,0,0.1)",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "1.1rem",
-                    color: "#3d1f00",
-                  }}
-                >
-                  ✕
-                </motion.button>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 }}
-              >
-                <div
-                  style={{
-                    fontSize: "0.64rem",
-                    fontWeight: 800,
-                    letterSpacing: "0.22em",
-                    textTransform: "uppercase",
-                    color: "#c05621",
-                    marginBottom: 7,
-                  }}
-                >
+            {/* Content — scrollable */}
+            <div className="flex-1 overflow-y-auto p-5 sm:p-7 md:p-8">
+              <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+                <div className="text-[0.64rem] font-extrabold tracking-[0.22em] uppercase text-[#c05621] mb-1.5">
                   {recipe.label}
                 </div>
-                <div
-                  style={{
-                    fontFamily: "'Playfair Display',serif",
-                    fontSize: "1.7rem",
-                    fontWeight: 900,
-                    color: "#3d1f00",
-                    lineHeight: 1.1,
-                    marginBottom: 12,
-                  }}
-                >
+                <div className="font-['Playfair_Display'] text-[1.4rem] sm:text-[1.7rem] font-black text-[#3d1f00] leading-[1.1] mb-3">
                   {recipe.title}
                 </div>
-                <div
-                  style={{
-                    fontSize: "0.88rem",
-                    color: "#6b3a1f",
-                    lineHeight: 1.78,
-                    marginBottom: 18,
-                  }}
-                >
+                <div className="text-[0.86rem] text-[#6b3a1f] leading-[1.78] mb-4">
                   {recipe.intro}
                 </div>
               </motion.div>
 
-              <hr
-                style={{
-                  height: 1,
-                  background:
-                    "linear-gradient(90deg,rgba(245,166,35,0.3),transparent)",
-                  border: "none",
-                  marginBottom: 18,
-                }}
-              />
+              <hr className="h-px border-none mb-4" style={{ background: "linear-gradient(90deg,rgba(245,166,35,0.3),transparent)" }} />
 
               {/* Ingredients */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.14 }}
-              >
-                <div
-                  style={{
-                    fontSize: "0.62rem",
-                    fontWeight: 800,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: "#c05621",
-                    marginBottom: 10,
-                  }}
-                >
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }}>
+                <div className="text-[0.62rem] font-extrabold tracking-[0.2em] uppercase text-[#c05621] mb-2.5">
                   Ingredients
                 </div>
-                <div
-                  style={{
-                    background: "rgba(245,166,35,0.07)",
-                    border: "1px solid rgba(245,166,35,0.18)",
-                    borderRadius: 14,
-                    padding: "14px 16px",
-                    fontSize: "0.84rem",
-                    color: "#6b3a1f",
-                    lineHeight: 1.76,
-                    marginBottom: 20,
-                  }}
-                >
+                <div className="rounded-[14px] p-3.5 sm:p-4 text-[0.84rem] text-[#6b3a1f] leading-[1.76] mb-5"
+                  style={{ background: "rgba(245,166,35,0.07)", border: "1px solid rgba(245,166,35,0.18)" }}>
                   {recipe.ingredients}
                 </div>
               </motion.div>
 
               {/* Method */}
-              <div
-                style={{
-                  fontSize: "0.62rem",
-                  fontWeight: 800,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "#c05621",
-                  marginBottom: 12,
-                }}
-              >
+              <div className="text-[0.62rem] font-extrabold tracking-[0.2em] uppercase text-[#c05621] mb-3">
                 Method
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 11,
-                  marginBottom: 26,
-                }}
-              >
+              <div className="flex flex-col gap-3 mb-6">
                 {recipe.steps.map((step, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.22 + i * 0.07 }}
-                    style={{
-                      display: "flex",
-                      gap: 12,
-                      alignItems: "flex-start",
-                    }}
+                    className="flex gap-3 items-start"
                   >
                     <div
-                      style={{
-                        width: 28,
-                        height: 28,
-                        borderRadius: "50%",
-                        flexShrink: 0,
-                        background: "linear-gradient(135deg,#c05621,#ed8936)",
-                        color: "#fff",
-                        fontFamily: "'Playfair Display',serif",
-                        fontSize: "0.8rem",
-                        fontWeight: 900,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        boxShadow: "0 3px 10px rgba(192,86,33,0.28)",
-                        marginTop: 1,
-                      }}
+                      className="w-7 h-7 rounded-full shrink-0 flex items-center justify-center text-white font-black mt-0.5"
+                      style={{ background: "linear-gradient(135deg,#c05621,#ed8936)", fontFamily: "'Playfair Display',serif", fontSize: "0.8rem", boxShadow: "0 3px 10px rgba(192,86,33,0.28)" }}
                     >
                       {i + 1}
                     </div>
-                    <div
-                      style={{
-                        fontSize: "0.84rem",
-                        color: "#6b3a1f",
-                        lineHeight: 1.72,
-                        paddingTop: 3,
-                      }}
-                    >
+                    <div className="text-[0.84rem] text-[#6b3a1f] leading-[1.72] pt-0.5">
                       {step}
                     </div>
                   </motion.div>
@@ -771,51 +532,24 @@ function RecipeModal({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.44 }}
-                style={{ display: "flex", gap: 10 }}
+                className="flex flex-col sm:flex-row gap-2.5"
               >
-                {/* Try This Recipe → opens URL in new tab */}
                 <motion.a
                   href={recipe.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.97 }}
-                  style={{
-                    flex: 1,
-                    padding: 14,
-                    borderRadius: 15,
-                    background: "linear-gradient(135deg,#c05621,#ed8936)",
-                    color: "#fff",
-                    border: "none",
-                    cursor: "pointer",
-                    fontFamily: "'DM Sans',sans-serif",
-                    fontSize: "0.9rem",
-                    fontWeight: 700,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 8,
-                    boxShadow: "0 8px 24px rgba(192,86,33,0.42)",
-                    textDecoration: "none",
-                  }}
+                  className="flex-1 py-3.5 rounded-[15px] text-white font-bold flex items-center justify-center gap-2 no-underline text-[0.88rem]"
+                  style={{ background: "linear-gradient(135deg,#c05621,#ed8936)", fontFamily: "'DM Sans',sans-serif", boxShadow: "0 8px 24px rgba(192,86,33,0.42)" }}
                 >
-                  🍪 Try This Recipe{" "}
-                  <span style={{ fontSize: "0.8rem", opacity: 0.72 }}>↗</span>
+                  🍪 Try This Recipe <span className="text-[0.8rem] opacity-70">↗</span>
                 </motion.a>
                 <motion.button
                   whileHover={{ y: -2, background: "rgba(192,86,33,0.06)" }}
                   onClick={onClose}
-                  style={{
-                    padding: "14px 22px",
-                    borderRadius: 15,
-                    background: "transparent",
-                    color: "#c05621",
-                    border: "1.5px solid rgba(192,86,33,0.28)",
-                    cursor: "pointer",
-                    fontFamily: "'DM Sans',sans-serif",
-                    fontSize: "0.88rem",
-                    fontWeight: 700,
-                  }}
+                  className="py-3.5 px-6 rounded-[15px] font-bold text-[#c05621] text-[0.88rem] cursor-pointer"
+                  style={{ background: "transparent", border: "1.5px solid rgba(192,86,33,0.28)", fontFamily: "'DM Sans',sans-serif" }}
                 >
                   ← Back
                 </motion.button>
