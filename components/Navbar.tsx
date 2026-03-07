@@ -26,6 +26,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Product", href: "/product" },
+  { label: "Recipes", href: "/recipes" },
   {
     label: "Grow With Us",
     href: "#",
