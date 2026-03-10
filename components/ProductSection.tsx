@@ -29,8 +29,8 @@ interface Product {
   image: string;
   badge: string;
   discount: string;
-  originalPrice: string;
-  salePrice: string;
+  // originalPrice: string;
+  // salePrice: string;
   color: string;
   accentColor: string;
   bgGradient: string;
@@ -48,8 +48,8 @@ const PRODUCTS: Product[] = [
     image: "/buiscuit/1.jpeg",
     badge: "BESTSELLER",
     discount: "Disc Up To 50% Off",
-    originalPrice: "₹240",
-    salePrice: "₹120",
+    // originalPrice: "₹240",
+    // salePrice: "₹120",
     color: "#c05621",
     accentColor: "#f5c842",
     bgGradient: "linear-gradient(145deg, #fef3e2 0%, #fde8c0 50%, #f5c842 100%)",
@@ -64,8 +64,8 @@ const PRODUCTS: Product[] = [
     image: "/buiscuit/2.jpeg",
     badge: "50% OFF",
     discount: "Disc Up To 50% Off",
-    originalPrice: "₹260",
-    salePrice: "₹130",
+    // originalPrice: "₹260",
+    // salePrice: "₹130",
     color: "#3d1f00",
     accentColor: "#c05621",
     bgGradient: "linear-gradient(145deg, #3d1f00 0%, #6b3a1f 50%, #c05621 100%)",
@@ -80,8 +80,8 @@ const PRODUCTS: Product[] = [
     image: "/buiscuit/3.jpeg",
     badge: "NEW",
     discount: "Disc Up To 50% Off",
-    originalPrice: "₹280",
-    salePrice: "₹140",
+    // originalPrice: "₹280",
+    // salePrice: "₹140",
     color: "#5c2d0a",
     accentColor: "#ed8936",
     bgGradient: "linear-gradient(145deg, #fff8f0 0%, #fde8c0 40%, #ed8936 100%)",
@@ -96,8 +96,8 @@ const PRODUCTS: Product[] = [
     image: "/buiscuit/4.jpeg",
     badge: "LIMITED",
     discount: "Disc Up To 50% Off",
-    originalPrice: "₹300",
-    salePrice: "₹150",
+    // originalPrice: "₹300",
+    // salePrice: "₹150",
     color: "#9b1b30",
     accentColor: "#f5a623",
     bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
@@ -112,8 +112,8 @@ const PRODUCTS: Product[] = [
     image: "/buiscuit/5.jpeg",
     badge: "LIMITED",
     discount: "Disc Up To 50% Off",
-    originalPrice: "₹300",
-    salePrice: "₹150",
+    // originalPrice: "₹300",
+    // salePrice: "₹150",
     color: "#9b1b30",
     accentColor: "#f5a623",
     bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
@@ -128,8 +128,8 @@ const PRODUCTS: Product[] = [
     image: "/buiscuit/6.jpeg",
     badge: "LIMITED",
     discount: "Disc Up To 50% Off",
-    originalPrice: "₹300",
-    salePrice: "₹150",
+    // originalPrice: "₹300",
+    // salePrice: "₹150",
     color: "#9b1b30",
     accentColor: "#f5a623",
     bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
@@ -409,7 +409,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               justifyContent: "space-between",
             }}
           >
-            <div>
+            {/* <div>
               <span
                 style={{
                   fontFamily: "Playfair Display, serif",
@@ -431,10 +431,10 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               >
                 {product.originalPrice}
               </span>
-            </div>
+            </div> */}
 
             {/* Add to cart */}
-            <motion.button
+            {/* <motion.button
               onClick={handleAdd}
               whileTap={{ scale: 0.9 }}
               animate={{
@@ -479,7 +479,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                   </motion.span>
                 )}
               </AnimatePresence>
-            </motion.button>
+            </motion.button> */}
           </div>
 
           {/* Progress bar "popularity" */}
@@ -686,10 +686,10 @@ function ProductListRow({ product, index }: { product: Product; index: number })
           <p style={{ fontSize: "0.82rem", color: "#9c6644", lineHeight: 1.5 }}>{product.desc}</p>
         </div>
         {/* Price */}
-        <div style={{ textAlign: "right", flexShrink: 0 }}>
+        {/* <div style={{ textAlign: "right", flexShrink: 0 }}>
           <div style={{ fontFamily: "Playfair Display, serif", fontSize: "1.4rem", fontWeight: 900, color: product.color, lineHeight: 1 }}>{product.salePrice}</div>
           <div style={{ fontSize: "0.78rem", color: "#9c6644", textDecoration: "line-through" }}>{product.originalPrice}</div>
-        </div>
+        </div> */}
         {/* Arrow */}
         <motion.div
           animate={{ x: hovered ? 5 : 0, opacity: hovered ? 1 : 0.35 }}
