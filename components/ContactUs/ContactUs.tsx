@@ -7,19 +7,19 @@ export default function ContactUs() {
   const contactInfo = [
     {
       title: "General Inquiry",
-      email: "contact@thesundelight.com",
-      icon: <Mail className="w-5 h-5" />,
-      link: "mailto:contact@thesundelight.com",
-    },
-    {
-      title: "Customer Feedback",
       email: "customercare@thesundelight.com",
-      icon: <MessageSquare className="w-5 h-5" />,
+      icon: <Mail className="w-5 h-5" />,
       link: "mailto:customercare@thesundelight.com",
     },
     {
+      title: "Careers",
+      email: "careers@sundelightfoods.com",
+      icon: <MessageSquare className="w-5 h-5" />,
+      link: "mailto:careers@sundelightfoods.com",
+    },
+    {
       title: "Our Location",
-      email: "UG 05, Aggarwal Prestige Mall, Rani Bagh, Pitam Pura, New Delhi, 110034",
+      email: "Plot No. 2, UG-05, Aggarwal Prestige Mall, Sant Nagar, M2K Road, Rani Bagh. North West, Delhi - 110034",
       icon: <MapPin className="w-5 h-5" />,
       link: "https://maps.google.com",
     },
@@ -91,7 +91,7 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[#9c6644] mb-1">Call Us</p>
-                    <p className="text-[#3d1f00] text-sm opacity-50 italic">Number sharing soon...</p>
+                    <a href="tel:8586859999" className="text-[#3d1f00] text-sm font-medium italic hover:text-[#c05621] transition-colors">+91 8586859999</a>
                   </div>
                 </motion.div>
               </div>

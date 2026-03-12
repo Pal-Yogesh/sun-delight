@@ -76,11 +76,11 @@ export default function FooterSection() {
                 </div>
                 <div className="flex items-center gap-3 text-brand-light/90">
                   <Phone size={20} className="text-brand-primary shrink-0" />
-                  <span className="text-sm">8586859999</span>
+                  <a href="tel:8586859999" className="text-sm hover:text-white transition-colors">8586859999</a>
                 </div>
                 <div className="flex items-center gap-3 text-brand-light/90">
                   <Mail size={20} className="text-brand-primary shrink-0" />
-                  <span className="text-sm">customercare@thesundelight.com</span>
+                  <a href="mailto:customercare@thesundelight.com" className="text-sm hover:text-white transition-colors">customercare@thesundelight.com</a>
                 </div>
               </div>
             </div>
@@ -100,9 +100,9 @@ export default function FooterSection() {
             <div>
               <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Key Features</h4>
               <ul className="space-y-4">
-                <li><Link href="/catalogue" className="text-brand-light/70 hover:text-white transition-colors duration-200">Product Catalogue</Link></li>
-                <li><Link href="/order" className="text-brand-light/70 hover:text-white transition-colors duration-200">Online Order</Link></li>
-                <li><Link href="/offers" className="text-brand-light/70 hover:text-white transition-colors duration-200">Special Offers</Link></li>
+                <li><Link href="/reciepes" className="text-brand-light/70 hover:text-white transition-colors duration-200">Our Reciepes</Link></li>
+                <li><Link href="/become-a-dealer" className="text-brand-light/70 hover:text-white transition-colors duration-200">Become A Dealer</Link></li>
+                <li><Link href="/our-journey" className="text-brand-light/70 hover:text-white transition-colors duration-200">Our Journey</Link></li>
                 <li><Link href="/contact-us" className="text-brand-light/70 hover:text-white transition-colors duration-200">Easy Contact</Link></li>
               </ul>
             </div>
@@ -132,8 +132,7 @@ export default function FooterSection() {
             </p>
             <div className="flex gap-6 text-sm text-brand-light/50 font-body">
               <Link href="/privacy-policy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
-              <Link href="/terms-and-conditions" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
-              <Link href="/disclaimer" className="hover:text-white transition-colors duration-200">Disclaimer</Link>
+              <Link href="/terms-and-conditions" className="hover:text-white transition-colors duration-200">Terms and Conditions</Link>
             </div>
           </div>
         </div>
