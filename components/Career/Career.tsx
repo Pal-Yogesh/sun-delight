@@ -41,7 +41,7 @@ export default function CareersPage() {
             className="font-serif font-black text-[#3d1f00] leading-tight mb-6"
             style={{ fontSize: "clamp(2.6rem,6vw,5rem)" }}
           >
-            Grow With <span className="text-[#c05621] italic">Sun Delight</span>
+            Grow With <br /> <span className="text-[#c05621] italic">Sun Delight</span>
           </motion.h1>
 
           <motion.p
@@ -50,7 +50,8 @@ export default function CareersPage() {
             transition={{ delay: 0.2 }}
             className="text-[#9c6644] text-lg leading-relaxed max-w-xl mx-auto"
           >
-            We are building India's next great biscuit brand and we want passionate people on the journey. If you love food, growth, and making a real impact — we want to hear from you.
+            At Sundelight, we believe people are the foundation of our success.  <br />
+            We are always looking for talented, passionate individuals who want to grow with us in the exciting FMCG industry. 
           </motion.p>
         </div>
       </div>
@@ -123,7 +124,7 @@ export default function CareersPage() {
 
             <div className="space-y-4">
               <a
-                href="mailto:careers@thesundelight.com"
+                href="mailto:careers@sundelightfoods.com"
                 className="flex items-center gap-4 p-4 md:p-5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/20 transition-all group"
               >
                 <div className="w-11 h-11 rounded-xl bg-[#c05621] flex items-center justify-center shrink-0">
@@ -131,12 +132,12 @@ export default function CareersPage() {
                 </div>
                 <div>
                   <div className="text-[.6rem] uppercase tracking-widest text-orange-200/60 mb-0.5">Email Us</div>
-                  <div className="font-bold text-sm group-hover:text-[#fbd38d] transition-colors">careers@thesundelight.com</div>
+                  <div className="font-bold text-sm group-hover:text-[#fbd38d] transition-colors">careers@sundelightfoods.com</div>
                 </div>
               </a>
 
               <a
-                href="tel:+911234567890"
+                href="tel:+918586859999"
                 className="flex items-center gap-4 p-4 md:p-5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/20 transition-all group"
               >
                 <div className="w-11 h-11 rounded-xl bg-[#c05621] flex items-center justify-center shrink-0">
@@ -144,7 +145,7 @@ export default function CareersPage() {
                 </div>
                 <div>
                   <div className="text-[.6rem] uppercase tracking-widest text-orange-200/60 mb-0.5">Call Us</div>
-                  <div className="font-bold text-sm group-hover:text-[#fbd38d] transition-colors">Number sharing soon...</div>
+                  <div className="font-bold text-sm group-hover:text-[#fbd38d] transition-colors">+91 8586859999</div>
                 </div>
               </a>
             </div>

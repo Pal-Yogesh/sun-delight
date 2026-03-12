@@ -98,9 +98,7 @@ export default function MissionSection() {
                   Our Mission
                 </h3>
                 <p className="text-brand-dark/80 font-body text-sm leading-relaxed">
-                  To spread happiness, one perfectly baked, gooey-centered
-                  cookie at a time, using only sustainable and premium
-                  ingredients.
+                Our mission is to create delicious, high-quality products that bring joy to everyday moments while maintaining the highest standards of quality, hygiene, and innovation. 
                 </p>
               </motion.div>
 
@@ -117,8 +115,7 @@ export default function MissionSection() {
                   Our Vision
                 </h3>
                 <p className="text-brand-dark/80 font-body text-sm leading-relaxed">
-                  To become the world's most beloved cookie brand, synonymous
-                  with quality, creativity, and unforgettable moments.
+To become a trusted and loved biscuit brand across India and global markets by delivering exceptional taste, consistent quality, and customer satisfaction. 
                 </p>
               </motion.div>
             </div>

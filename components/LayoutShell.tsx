@@ -15,7 +15,9 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       {loading && <SunLoader onComplete={handleComplete} />}
-      <div className={`transition-opacity duration-500 ${loading ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+      <div 
+      className={`overflow-x-hidden transition-opacity duration-500 ${loading ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+      >
         <Navbar />
         {children}
         <FooterSection />

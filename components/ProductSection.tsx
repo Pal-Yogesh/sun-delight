@@ -41,9 +41,9 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     id: 1,
-    name: "Caramel Cookie",
+    name: "Butter Cookies",
     tagline: "Golden & Irresistible",
-    desc: "Rich molten caramel swirled into a buttery base — chewy, golden, utterly addictive.",
+    desc: "Rich, buttery, and melt-in-the-mouth cookies baked to perfection for a delightful indulgence.",
     emoji: "🍯",
     image: "/buiscuit/1.jpeg",
     badge: "BESTSELLER",
@@ -52,62 +52,49 @@ const PRODUCTS: Product[] = [
     // salePrice: "₹120",
     color: "#c05621",
     accentColor: "#f5c842",
-    bgGradient: "linear-gradient(145deg, #fef3e2 0%, #fde8c0 50%, #f5c842 100%)",
+    bgGradient:
+      "linear-gradient(145deg, #fef3e2 0%, #fde8c0 50%, #f5c842 100%)",
     tag: "Sweet & Chewy",
   },
   {
     id: 2,
-    name: "Choco Cookie",
-    tagline: "Dark & Decadent",
-    desc: "Double Belgian chocolate in every bite — intense, velvety, and dangerously good.",
+    name: "Coconut Cookies",
+    tagline: "Tropical & Crunchy",
+    desc: "A tropical twist with the goodness of coconut and a delicious crunchy texture.",
     emoji: "🍫",
-    image: "/buiscuit/2.jpeg",
+    image: "/buiscuit/4.jpeg",
     badge: "50% OFF",
     discount: "Disc Up To 50% Off",
     // originalPrice: "₹260",
     // salePrice: "₹130",
     color: "#3d1f00",
     accentColor: "#c05621",
-    bgGradient: "linear-gradient(145deg, #3d1f00 0%, #6b3a1f 50%, #c05621 100%)",
+    bgGradient:
+      "linear-gradient(145deg, #3d1f00 0%, #6b3a1f 50%, #c05621 100%)",
     tag: "Rich & Dark",
   },
   {
     id: 3,
-    name: "Chocochips Cookie",
-    tagline: "Classic & Loaded",
-    desc: "Loaded with premium dark chocolate chips in every single bite — the classic reimagined.",
+    name: "Chocolate Cookies",
+    tagline: "Rich & Satisfying",
+    desc: "Loaded with chocolate goodness for those who love a rich and satisfying treat.",
     emoji: "🫐",
-    image: "/buiscuit/3.jpeg",
+    image: "/buiscuit/6.jpeg",
     badge: "NEW",
     discount: "Disc Up To 50% Off",
     // originalPrice: "₹280",
     // salePrice: "₹140",
     color: "#5c2d0a",
     accentColor: "#ed8936",
-    bgGradient: "linear-gradient(145deg, #fff8f0 0%, #fde8c0 40%, #ed8936 100%)",
+    bgGradient:
+      "linear-gradient(145deg, #fff8f0 0%, #fde8c0 40%, #ed8936 100%)",
     tag: "Crispy & Loaded",
   },
   {
     id: 4,
-    name: "Raspberry Cookie",
-    tagline: "Fruity & Bright",
-    desc: "Tart raspberry jam nestled in golden shortbread — fruity, fresh, and utterly divine.",
-    emoji: "🍓",
-    image: "/buiscuit/4.jpeg",
-    badge: "LIMITED",
-    discount: "Disc Up To 50% Off",
-    // originalPrice: "₹300",
-    // salePrice: "₹150",
-    color: "#9b1b30",
-    accentColor: "#f5a623",
-    bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
-    tag: "Sweet & Tangy",
-  },
-  {
-    id: 5,
-    name: "Raspberry Cookie",
-    tagline: "Fruity & Bright",
-    desc: "Tart raspberry jam nestled in golden shortbread — fruity, fresh, and utterly divine.",
+    name: "Tea Time Biscuits",
+    tagline: "Perfect with Chai",
+    desc: "Perfectly baked biscuits designed to complement your everyday cup of tea.",
     emoji: "🍓",
     image: "/buiscuit/5.jpeg",
     badge: "LIMITED",
@@ -116,25 +103,44 @@ const PRODUCTS: Product[] = [
     // salePrice: "₹150",
     color: "#9b1b30",
     accentColor: "#f5a623",
-    bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
+    bgGradient:
+      "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
     tag: "Sweet & Tangy",
   },
   {
-    id: 6,
-    name: "Raspberry Cookie",
-    tagline: "Fruity & Bright",
-    desc: "Tart raspberry jam nestled in golden shortbread — fruity, fresh, and utterly divine.",
+    id: 5,
+    name: "Glucose Biscuits",
+    tagline: "Light & Energizing",
+    desc: "Light, crispy, and energizing biscuits loved by families across generations.",
     emoji: "🍓",
-    image: "/buiscuit/6.jpeg",
-    badge: "LIMITED",
+    image: "/buiscuit/2.jpeg",
+    badge: "POPULAR",
     discount: "Disc Up To 50% Off",
     // originalPrice: "₹300",
     // salePrice: "₹150",
     color: "#9b1b30",
     accentColor: "#f5a623",
-    bgGradient: "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
+    bgGradient:
+      "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
     tag: "Sweet & Tangy",
   },
+  // {
+  //   id: 6,
+  //   name: "Cream Biscuits",
+  //   tagline: "Smooth & Creamy",
+  //   desc: "Crispy biscuit shells with a smooth cream filling — a classic favourite for all ages.",
+  //   emoji: "🍓",
+  //   image: "/buiscuit/6.jpeg",
+  //   badge: "FAVOURITE",
+  //   discount: "Disc Up To 50% Off",
+  //   // originalPrice: "₹300",
+  //   // salePrice: "₹150",
+  //   color: "#9b1b30",
+  //   accentColor: "#f5a623",
+  //   bgGradient:
+  //     "linear-gradient(145deg, #fff5f5 0%, #ffe4e6 50%, #fda4af 100%)",
+  //   tag: "Sweet & Tangy",
+  // },
 ];
 
 // ─── Discount Badge ───────────────────────────────────────────────────────────
@@ -249,8 +255,15 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           {[0.95, 0.78, 0.6].map((s, i) => (
             <motion.div
               key={i}
-              animate={{ rotate: i % 2 === 0 ? [0, 360] : [360, 0], scale: hovered ? s * 1.05 : s }}
-              transition={{ duration: 25 + i * 5, repeat: Infinity, ease: "linear" }}
+              animate={{
+                rotate: i % 2 === 0 ? [0, 360] : [360, 0],
+                scale: hovered ? s * 1.05 : s,
+              }}
+              transition={{
+                duration: 25 + i * 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
               style={{
                 position: "absolute",
                 top: "50%",
@@ -299,12 +312,15 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           {/* Shine sweep on hover */}
           <motion.div
             initial={{ x: "-100%", opacity: 0 }}
-            animate={hovered ? { x: "200%", opacity: 1 } : { x: "-100%", opacity: 0 }}
+            animate={
+              hovered ? { x: "200%", opacity: 1 } : { x: "-100%", opacity: 0 }
+            }
             transition={{ duration: 0.6, ease: "easeInOut" }}
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%)",
+              background:
+                "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%)",
               zIndex: 4,
               pointerEvents: "none",
             }}
@@ -509,7 +525,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               <motion.div
                 initial={{ width: 0 }}
                 animate={inView ? { width: `${85 + product.id * 3}%` } : {}}
-                transition={{ delay: 0.4 + index * 0.1, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  delay: 0.4 + index * 0.1,
+                  duration: 1.2,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 style={{
                   height: "100%",
                   borderRadius: "4px",
@@ -526,7 +546,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 
 // ─── Floating Section Title ───────────────────────────────────────────────────
 function SectionTitle({ inView }: { inView: boolean }) {
-  const words1 = "Where every cookie".split(" ");
+  const words1 = "Where every buiscuit".split(" ");
   const words2 = "is a smile.".split(" ");
 
   return (
@@ -546,7 +566,11 @@ function SectionTitle({ inView }: { inView: boolean }) {
             key={i}
             initial={{ opacity: 0, y: 55, rotateX: -75 }}
             animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-            transition={{ delay: 0.1 + i * 0.1, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              delay: 0.1 + i * 0.1,
+              duration: 0.85,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             style={{ display: "inline-block", marginRight: "0.28em" }}
           >
             {w}
@@ -579,7 +603,13 @@ function SectionTitle({ inView }: { inView: boolean }) {
 }
 
 // ─── View Toggle ─────────────────────────────────────────────────────────────
-function ViewToggle({ view, onChange }: { view: "grid" | "list"; onChange: (v: "grid" | "list") => void }) {
+function ViewToggle({
+  view,
+  onChange,
+}: {
+  view: "grid" | "list";
+  onChange: (v: "grid" | "list") => void;
+}) {
   return (
     <div
       style={{
@@ -618,7 +648,13 @@ function ViewToggle({ view, onChange }: { view: "grid" | "list"; onChange: (v: "
 }
 
 // ─── List Row Card ────────────────────────────────────────────────────────────
-function ProductListRow({ product, index }: { product: Product; index: number }) {
+function ProductListRow({
+  product,
+  index,
+}: {
+  product: Product;
+  index: number;
+}) {
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-5% 0px" });
@@ -628,14 +664,20 @@ function ProductListRow({ product, index }: { product: Product; index: number })
       ref={ref}
       initial={{ opacity: 0, x: -40 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ delay: index * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        delay: index * 0.1,
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
     >
       <motion.div
         animate={{
           x: hovered ? 8 : 0,
-          boxShadow: hovered ? `0 12px 40px ${product.color}20` : "0 2px 12px rgba(0,0,0,0.04)",
+          boxShadow: hovered
+            ? `0 12px 40px ${product.color}20`
+            : "0 2px 12px rgba(0,0,0,0.04)",
           background: hovered ? "rgba(255,253,249,1)" : "rgba(255,253,249,0.6)",
         }}
         style={{
@@ -675,15 +717,42 @@ function ProductListRow({ product, index }: { product: Product; index: number })
         </motion.div>
         {/* Info */}
         <div style={{ flex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "4px" }}>
-            <h3 style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.1rem", color: "#3d1f00" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              marginBottom: "4px",
+            }}
+          >
+            <h3
+              style={{
+                fontFamily: "Playfair Display, serif",
+                fontWeight: 900,
+                fontSize: "1.1rem",
+                color: "#3d1f00",
+              }}
+            >
               {product.name}
             </h3>
-            <span style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "3px 8px", borderRadius: "50px", background: product.color + "18", color: product.color }}>
+            <span
+              style={{
+                fontSize: "0.6rem",
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                padding: "3px 8px",
+                borderRadius: "50px",
+                background: product.color + "18",
+                color: product.color,
+              }}
+            >
               {product.badge}
             </span>
           </div>
-          <p style={{ fontSize: "0.82rem", color: "#9c6644", lineHeight: 1.5 }}>{product.desc}</p>
+          <p style={{ fontSize: "0.82rem", color: "#9c6644", lineHeight: 1.5 }}>
+            {product.desc}
+          </p>
         </div>
         {/* Price */}
         {/* <div style={{ textAlign: "right", flexShrink: 0 }}>
@@ -710,7 +779,10 @@ export default function ProductsSection() {
   const [filter, setFilter] = useState("All");
 
   const titleInView = useInView(titleRef, { once: true, margin: "-10% 0px" });
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
 
   const filters = ["All", "Bestsellers", "New Arrivals", "50% Off"];
@@ -718,7 +790,8 @@ export default function ProductsSection() {
     if (filter === "All") return true;
     if (filter === "Bestsellers") return p.badge === "BESTSELLER";
     if (filter === "New Arrivals") return p.badge === "NEW";
-    if (filter === "50% Off") return p.badge === "50% OFF" || p.discount.includes("50");
+    if (filter === "50% Off")
+      return p.badge === "50% OFF" || p.discount.includes("50");
     return true;
   });
 
@@ -729,16 +802,21 @@ export default function ProductsSection() {
         position: "relative",
         overflow: "hidden",
         padding: "120px 0 140px",
-        background: "linear-gradient(180deg, #fffdf9 0%, #fff8f0 60%, #fef3e2 100%)",
+        background:
+          "linear-gradient(180deg, #fffdf9 0%, #fff8f0 60%, #fef3e2 100%)",
       }}
     >
       {/* ── Background ── */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute inset-0 pointer-events-none"
+      >
         <div
           style={{
             position: "absolute",
             inset: "-10%",
-            backgroundImage: "radial-gradient(circle, rgba(192,86,33,0.1) 1px, transparent 1px)",
+            backgroundImage:
+              "radial-gradient(circle, rgba(192,86,33,0.1) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
             opacity: 0.35,
           }}
@@ -753,26 +831,74 @@ export default function ProductsSection() {
             width: "70vw",
             height: "70vw",
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(245,166,35,0.07), transparent 65%)",
+            background:
+              "radial-gradient(circle, rgba(245,166,35,0.07), transparent 65%)",
           }}
         />
       </motion.div>
 
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 5%", position: "relative", zIndex: 1 }}>
-
+      <div
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 5%",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         {/* ── Section Header ── */}
         <div ref={titleRef} style={{ marginBottom: "60px" }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={titleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "24px" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "12px",
+              marginBottom: "24px",
+            }}
           >
-            <div style={{ height: "1px", width: "60px", background: "linear-gradient(90deg, transparent, #c05621)" }} />
-            <motion.span animate={{ rotate: [0, 360] }} transition={{ duration: 14, repeat: Infinity, ease: "linear" }} style={{ fontSize: "1.1rem" }}>☀️</motion.span>
-            <span style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.25em", textTransform: "uppercase", color: "#c05621" }}>Our Specialties</span>
-            <motion.span animate={{ rotate: [0, 360] }} transition={{ duration: 14, repeat: Infinity, ease: "linear" }} style={{ fontSize: "1.1rem" }}>🍪</motion.span>
-            <div style={{ height: "1px", width: "60px", background: "linear-gradient(90deg, #c05621, transparent)" }} />
+            <div
+              style={{
+                height: "1px",
+                width: "60px",
+                background: "linear-gradient(90deg, transparent, #c05621)",
+              }}
+            />
+            <motion.span
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+              style={{ fontSize: "1.1rem" }}
+            >
+              ☀️
+            </motion.span>
+            <span
+              style={{
+                fontSize: "0.68rem",
+                fontWeight: 800,
+                letterSpacing: "0.25em",
+                textTransform: "uppercase",
+                color: "#c05621",
+              }}
+            >
+              Our Specialties
+            </span>
+            <motion.span
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+              style={{ fontSize: "1.1rem" }}
+            >
+              🍪
+            </motion.span>
+            <div
+              style={{
+                height: "1px",
+                width: "60px",
+                background: "linear-gradient(90deg, #c05621, transparent)",
+              }}
+            />
           </motion.div>
 
           <SectionTitle inView={titleInView} />
@@ -781,9 +907,19 @@ export default function ProductsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={titleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.6, duration: 0.7 }}
-            style={{ textAlign: "center", color: "#9c6644", fontSize: "1rem", lineHeight: 1.8, maxWidth: "480px", margin: "20px auto 0" }}
+            style={{
+              textAlign: "center",
+              color: "#9c6644",
+              fontSize: "1rem",
+              lineHeight: 1.8,
+              maxWidth: "780px",
+              margin: "20px auto 0",
+            }}
           >
-            Handcrafted with premium ingredients — every bite tells a story of warmth, tradition, and pure joy.
+             Made with premium ingredients and Hygienically manufactured in
+            modern facilities and Perfect balance of taste and crunch or Consistent
+            quality in every batch designed to bring happiness to every
+            bite{" "}
           </motion.p>
         </div>
 
@@ -792,7 +928,14 @@ export default function ProductsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={titleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.7, duration: 0.6 }}
-          style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "48px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "12px",
+            marginBottom: "48px",
+          }}
         >
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
             {filters.map((f) => (
@@ -802,10 +945,15 @@ export default function ProductsSection() {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 animate={{
-                  background: filter === f ? "linear-gradient(135deg, #c05621, #ed8936)" : "transparent",
+                  background:
+                    filter === f
+                      ? "linear-gradient(135deg, #c05621, #ed8936)"
+                      : "transparent",
                   color: filter === f ? "#fff" : "#6b3a1f",
-                  borderColor: filter === f ? "transparent" : "rgba(61,31,0,0.15)",
-                  boxShadow: filter === f ? "0 6px 20px rgba(192,86,33,0.35)" : "none",
+                  borderColor:
+                    filter === f ? "transparent" : "rgba(61,31,0,0.15)",
+                  boxShadow:
+                    filter === f ? "0 6px 20px rgba(192,86,33,0.35)" : "none",
                 }}
                 style={{
                   padding: "9px 22px",
@@ -847,10 +995,24 @@ export default function ProductsSection() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  style={{ gridColumn: "1/-1", textAlign: "center", padding: "60px", color: "#9c6644" }}
+                  style={{
+                    gridColumn: "1/-1",
+                    textAlign: "center",
+                    padding: "60px",
+                    color: "#9c6644",
+                  }}
                 >
-                  <div style={{ fontSize: "3rem", marginBottom: "12px" }}>🍪</div>
-                  <div style={{ fontFamily: "Playfair Display, serif", fontSize: "1.2rem" }}>No cookies found for this filter</div>
+                  <div style={{ fontSize: "3rem", marginBottom: "12px" }}>
+                    🍪
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "Playfair Display, serif",
+                      fontSize: "1.2rem",
+                    }}
+                  >
+                    No cookies found for this filter
+                  </div>
                 </motion.div>
               )}
             </motion.div>
@@ -904,12 +1066,16 @@ export default function ProductsSection() {
               style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent)",
+                background:
+                  "linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent)",
                 transform: "skewX(-20deg)",
               }}
             />
             <span>View All Products</span>
-            <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
+            <motion.span
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity }}
+            >
               🍪
             </motion.span>
           </motion.a>

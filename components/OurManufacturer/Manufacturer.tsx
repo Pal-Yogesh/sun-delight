@@ -48,7 +48,7 @@ export default function ManufacturingSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#c05621] font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Our Footprint</span>
+            <span className="text-[#c05621] font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Our Manufacturing</span>
             <h2 className="text-5xl lg:text-7xl font-black text-[#3d1f00] font-['Playfair_Display'] leading-tight mb-8">
               State-of-the-Art <br />
               <span className="text-[#c05621] italic">Rajpura Facility.</span>

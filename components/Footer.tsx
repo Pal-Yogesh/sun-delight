@@ -68,21 +68,19 @@ export default function FooterSection() {
             {/* Brand & Contact */}
             <div className="space-y-6">
               <Image alt="logo" width={1000} height={1000} src="/logo-sun.png" className="w-32 h-16" />
-              <p className="text-brand-light/70 font-body text-sm leading-relaxed max-w-xs">
-                Freshly Baked Happiness in Every Bite. Elegant cookies for sophisticated palates.
-              </p>
+              <p className="text-brand-secondary font-bold text-sm mb-1">SUNTEK SUPERFOODS LLP</p>
               <div className="space-y-3 pt-2">
                 <div className="flex items-start gap-3 text-brand-light/90">
                   <MapPin size={20} className="text-brand-primary shrink-0 mt-0.5" />
-                  <span className="text-sm">Pitam Pura, New Delhi, 110034</span>
+                  <span className="text-sm">Plot No. 2, UG-05, Aggarwal Prestige Mall, Sant Nagar, M2K Road, Rani Bagh. North West, Delhi - 110034</span>
                 </div>
                 <div className="flex items-center gap-3 text-brand-light/90">
                   <Phone size={20} className="text-brand-primary shrink-0" />
-                  <span className="text-sm">(+86) 7654-765</span>
+                  <span className="text-sm">8586859999</span>
                 </div>
                 <div className="flex items-center gap-3 text-brand-light/90">
                   <Mail size={20} className="text-brand-primary shrink-0" />
-                  <span className="text-sm">mail@sundelight.com</span>
+                  <span className="text-sm">customercare@thesundelight.com</span>
                 </div>
               </div>
             </div>
@@ -133,8 +131,8 @@ export default function FooterSection() {
               Copyright © {new Date().getFullYear()} Sun Delight. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-brand-light/50 font-body">
-              <Link href="/privacy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
+              <Link href="/privacy-policy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
               <Link href="/disclaimer" className="hover:text-white transition-colors duration-200">Disclaimer</Link>
             </div>
           </div>

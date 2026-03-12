@@ -34,7 +34,7 @@ const PILLARS: Pillar[] = [
     id: "mission",
     icon: "🎯",
     title: "Our Mission",
-    body: "To craft cookies that turn ordinary moments into cherished memories — bringing warmth, quality, and joy to every household in India.",
+    body: "Our mission is to create delicious, high-quality products that bring joy to everyday moments while maintaining the highest standards of quality, hygiene, and innovation. ",
     accent: "#c05621",
     num: "01",
   },
@@ -42,7 +42,7 @@ const PILLARS: Pillar[] = [
     id: "vision",
     icon: "🌟",
     title: "Our Vision",
-    body: "To become India's most beloved artisan cookie brand — celebrated for uncompromising quality, authentic flavors, and a commitment to sustainable baking.",
+    body: "To become a trusted and loved biscuit brand across India and global markets by delivering exceptional taste, consistent quality, and customer satisfaction. ",
     accent: "#ed8936",
     num: "02",
   },
@@ -73,21 +73,35 @@ function AnimNumber({ to, suffix = "" }: { to: number; suffix?: string }) {
 
   useEffect(() => {
     if (!inView) return;
-    gsap.to({ v: 0 }, {
-      v: to,
-      duration: 2.2,
-      ease: "power2.out",
-      onUpdate: function () {
-        setVal(Math.round(this.targets()[0].v));
+    gsap.to(
+      { v: 0 },
+      {
+        v: to,
+        duration: 2.2,
+        ease: "power2.out",
+        onUpdate: function () {
+          setVal(Math.round(this.targets()[0].v));
+        },
       },
-    });
+    );
   }, [inView, to]);
 
-  return <span ref={ref}>{val.toLocaleString()}{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {val.toLocaleString()}
+      {suffix}
+    </span>
+  );
 }
 
 // ─── Ingredient Bar ─────────────────────────────────────────────────────────────
-function IngredientBar({ item, index }: { item: typeof INGREDIENTS[0]; index: number }) {
+function IngredientBar({
+  item,
+  index,
+}: {
+  item: (typeof INGREDIENTS)[0];
+  index: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-5% 0px" });
 
@@ -96,13 +110,19 @@ function IngredientBar({ item, index }: { item: typeof INGREDIENTS[0]; index: nu
       ref={ref}
       initial={{ opacity: 0, x: -24 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ delay: index * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        delay: index * 0.12,
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       className="group"
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <motion.span
-            animate={inView ? { rotate: [0, 15, -5, 0], scale: [1, 1.2, 1] } : {}}
+            animate={
+              inView ? { rotate: [0, 15, -5, 0], scale: [1, 1.2, 1] } : {}
+            }
             transition={{ delay: 0.4 + index * 0.12, duration: 0.6 }}
             className="text-xl"
           >
@@ -206,7 +226,9 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
           animate={{ width: hovered ? "32px" : "20px" }}
           transition={{ duration: 0.35 }}
           className="h-[2px] rounded-full"
-          style={{ background: `linear-gradient(90deg, ${pillar.accent}, transparent)` }}
+          style={{
+            background: `linear-gradient(90deg, ${pillar.accent}, transparent)`,
+          }}
         />
         <h4
           className="font-serif font-bold tracking-wide uppercase text-xs"
@@ -259,35 +281,125 @@ function ImageMosaic() {
   return (
     <div ref={ref} className="relative h-full min-h-[300px] lg:min-h-[580px]">
       {/* ── MAIN IMAGE BLOCK ── */}
-      <Image src="/cookie-hero.png" width={1000} height={1000} alt="cookie" className="w-full h-[50%]" />
+      <Image
+        src="/cookie-hero.png"
+        width={1000}
+        height={1000}
+        alt="cookie"
+        className="w-full h-[50%]"
+      />
 
       {/* ── ACCENT IMAGE ── */}
-      <Image src="/cookie-lifestyle.png" width={1000} height={1000} alt="cookie" className="w-full h-[35%] mt-16" />
+      <Image
+        src="/cookie-lifestyle.png"
+        width={1000}
+        height={1000}
+        alt="cookie"
+        className="w-full h-[35%] mt-16"
+      />
 
       {/* ── INLINE STATS — mobile/tablet only ── */}
       <div className="flex gap-3 mt-6 lg:hidden">
-        <div className="flex-1 flex items-center gap-3 rounded-2xl px-4 py-3"
-          style={{ background: "rgba(255,253,249,0.95)", border: "1px solid rgba(245,166,35,0.2)", boxShadow: "0 8px 24px rgba(61,31,0,0.08)" }}>
-          <div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg, #fbd38d, #ed8936)",
-            display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.1rem", flexShrink: 0 }}>🏆</div>
+        <div
+          className="flex-1 flex items-center gap-3 rounded-2xl px-4 py-3"
+          style={{
+            background: "rgba(255,253,249,0.95)",
+            border: "1px solid rgba(245,166,35,0.2)",
+            boxShadow: "0 8px 24px rgba(61,31,0,0.08)",
+          }}
+        >
+          <div
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 10,
+              background: "linear-gradient(135deg, #fbd38d, #ed8936)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "1.1rem",
+              flexShrink: 0,
+            }}
+          >
+            🏆
+          </div>
           <div>
-            <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#c05621", lineHeight: 1, fontFamily: "Playfair Display, serif" }}>
+            <div
+              style={{
+                fontWeight: 800,
+                fontSize: "1.2rem",
+                color: "#c05621",
+                lineHeight: 1,
+                fontFamily: "Playfair Display, serif",
+              }}
+            >
               <AnimNumber to={15} suffix="K+" />
             </div>
-            <div style={{ fontSize: "0.6rem", color: "#9c6644", marginTop: 2 }}>Happy Customers</div>
+            <div style={{ fontSize: "0.6rem", color: "#9c6644", marginTop: 2 }}>
+              Happy Customers
+            </div>
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-2xl px-4 py-3"
-          style={{ background: "rgba(61,31,0,0.88)", boxShadow: "0 8px 24px rgba(61,31,0,0.18)" }}>
+        <div
+          className="flex items-center gap-3 rounded-2xl px-4 py-3"
+          style={{
+            background: "rgba(61,31,0,0.88)",
+            boxShadow: "0 8px 24px rgba(61,31,0,0.18)",
+          }}
+        >
           <div>
-            <div style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.4rem", color: "#ed8936", lineHeight: 1 }}>98%</div>
-            <div style={{ fontSize: "0.6rem", color: "rgba(253,232,192,0.6)", letterSpacing: "0.1em", marginTop: 2, textTransform: "uppercase" }}>Satisfaction</div>
+            <div
+              style={{
+                fontFamily: "Playfair Display, serif",
+                fontWeight: 900,
+                fontSize: "1.4rem",
+                color: "#ed8936",
+                lineHeight: 1,
+              }}
+            >
+              98%
+            </div>
+            <div
+              style={{
+                fontSize: "0.6rem",
+                color: "rgba(253,232,192,0.6)",
+                letterSpacing: "0.1em",
+                marginTop: 2,
+                textTransform: "uppercase",
+              }}
+            >
+              Satisfaction
+            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center rounded-full w-14 h-14 shrink-0"
-          style={{ background: "linear-gradient(135deg, #c05621, #ed8936)", boxShadow: "0 6px 18px rgba(192,86,33,0.4)" }}>
-          <div style={{ fontSize: "0.4rem", color: "rgba(255,255,255,0.7)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Since</div>
-          <div style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.1rem", color: "#fff", lineHeight: 1 }}>2014</div>
+        <div
+          className="flex flex-col items-center justify-center rounded-full w-14 h-14 shrink-0"
+          style={{
+            background: "linear-gradient(135deg, #c05621, #ed8936)",
+            boxShadow: "0 6px 18px rgba(192,86,33,0.4)",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "0.4rem",
+              color: "rgba(255,255,255,0.7)",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+            }}
+          >
+            Since
+          </div>
+          <div
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontWeight: 900,
+              fontSize: "1.1rem",
+              color: "#fff",
+              lineHeight: 1,
+            }}
+          >
+            2014
+          </div>
         </div>
       </div>
 
@@ -315,16 +427,41 @@ function ImageMosaic() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <div style={{ width: "40px", height: "40px", borderRadius: "12px",
-              background: "linear-gradient(135deg, #fbd38d, #ed8936)",
-              display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem" }}>
+            <div
+              style={{
+                width: "40px",
+                height: "40px",
+                borderRadius: "12px",
+                background: "linear-gradient(135deg, #fbd38d, #ed8936)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1.3rem",
+              }}
+            >
               🏆
             </div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: "1.4rem", color: "#c05621", lineHeight: 1, fontFamily: "Playfair Display, serif" }}>
+              <div
+                style={{
+                  fontWeight: 800,
+                  fontSize: "1.4rem",
+                  color: "#c05621",
+                  lineHeight: 1,
+                  fontFamily: "Playfair Display, serif",
+                }}
+              >
                 <AnimNumber to={15} suffix="K+" />
               </div>
-              <div style={{ fontSize: "0.7rem", color: "#9c6644", marginTop: "2px" }}>Happy Customers</div>
+              <div
+                style={{
+                  fontSize: "0.7rem",
+                  color: "#9c6644",
+                  marginTop: "2px",
+                }}
+              >
+                Happy Customers
+              </div>
             </div>
           </div>
         </motion.div>
@@ -334,25 +471,61 @@ function ImageMosaic() {
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={inView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.9, type: "spring" }}
+        transition={{
+          duration: 0.7,
+          ease: [0.22, 1, 0.36, 1],
+          delay: 0.9,
+          type: "spring",
+        }}
         className="hidden lg:block"
-        style={{ position: "absolute", right: "-2%", bottom: "38%", zIndex: 10 }}
+        style={{
+          position: "absolute",
+          right: "-2%",
+          bottom: "38%",
+          zIndex: 10,
+        }}
       >
         <motion.div
           animate={{ rotate: [0, 360] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          style={{ width: "80px", height: "80px", borderRadius: "50%",
+          style={{
+            width: "80px",
+            height: "80px",
+            borderRadius: "50%",
             background: "linear-gradient(135deg, #c05621, #ed8936)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            flexDirection: "column", boxShadow: "0 8px 30px rgba(192,86,33,0.45)", cursor: "default" }}
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            boxShadow: "0 8px 30px rgba(192,86,33,0.45)",
+            cursor: "default",
+          }}
         >
           <motion.div
             animate={{ rotate: [0, -360] }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             style={{ textAlign: "center" }}
           >
-            <div style={{ fontFamily: "Playfair Display, serif", fontWeight: 900, fontSize: "1.4rem", color: "#fff", lineHeight: 1 }}>98%</div>
-            <div style={{ fontSize: "0.5rem", color: "rgba(255,255,255,0.8)", letterSpacing: "0.1em" }}>SATISFACTION</div>
+            <div
+              style={{
+                fontFamily: "Playfair Display, serif",
+                fontWeight: 900,
+                fontSize: "1.4rem",
+                color: "#fff",
+                lineHeight: 1,
+              }}
+            >
+              98%
+            </div>
+            <div
+              style={{
+                fontSize: "0.5rem",
+                color: "rgba(255,255,255,0.8)",
+                letterSpacing: "0.1em",
+              }}
+            >
+              SATISFACTION
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>
@@ -391,7 +564,7 @@ export default function AboutSection() {
             start: "top 80%",
             once: true,
           },
-        }
+        },
       );
     });
     return () => ctx.revert();
@@ -403,7 +576,8 @@ export default function AboutSection() {
       style={{
         position: "relative",
         overflow: "hidden",
-        background: "linear-gradient(160deg, #fffdf9 0%, #fff8f0 50%, #fef3e2 100%)",
+        background:
+          "linear-gradient(160deg, #fffdf9 0%, #fff8f0 50%, #fef3e2 100%)",
       }}
       className="py-24  md:py-20 lg:py-[120px]"
     >
@@ -444,7 +618,12 @@ export default function AboutSection() {
         />
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3,
+          }}
           style={{
             position: "absolute",
             bottom: "-5%",
@@ -598,18 +777,29 @@ export default function AboutSection() {
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: 0.4,
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               style={{
                 fontSize: "1.05rem",
                 color: "#6b3a1f",
                 lineHeight: "1.88",
                 marginBottom: "48px",
-                maxWidth: "480px",
+                maxWidth: "500px",
               }}
             >
-              At Sun Delight, every cookie tells a story. We blend the finest
-              ingredients with generations of baking wisdom — creating treats that
-              aren't just delicious, but truly unforgettable.
+              Sundelight is a premium biscuit brand from the trusted house of
+              Suntek Group, a name known for quality manufacturing and
+              excellence. <br />  
+              With decades of experience in industry and innovation, Sundelight
+              was created with a simple vision — to bring delicious,
+              high-quality biscuits to families across India.
+              <br />
+              Every Sundelight biscuit is crafted with carefully selected
+              ingredients and baked with precision to deliver the perfect taste,
+              crunch, and freshness.
             </motion.p>
 
             {/* Mission & Vision Cards */}
@@ -630,7 +820,11 @@ export default function AboutSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.7, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: 0.7,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               style={{
                 background: "rgba(255,253,249,0.7)",
                 border: "1px solid rgba(245,166,35,0.15)",
@@ -652,7 +846,13 @@ export default function AboutSection() {
               >
                 ✦ Ingredient Quality
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "16px",
+                }}
+              >
                 {INGREDIENTS.map((item, i) => (
                   <IngredientBar key={i} item={item} index={i} />
                 ))}
@@ -663,7 +863,11 @@ export default function AboutSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.9, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: 0.9,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               <LearnMoreButton />
             </motion.div>

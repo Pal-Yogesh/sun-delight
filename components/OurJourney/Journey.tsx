@@ -50,7 +50,7 @@
 //       transition={{ duration: 0.6, delay: index * 0.1 }}
 //       className="group relative p-8 rounded-[2.5rem] bg-white border border-[#3d1f00]/5 hover:shadow-2xl hover:shadow-[#c05621]/10 transition-all duration-500"
 //     >
-//       <div 
+//       <div
 //         className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500"
 //         style={{ background: `${item.color}10` }}
 //       >
@@ -87,12 +87,12 @@
 
 //   return (
 //     <section ref={containerRef} className="relative py-24 lg:py-40 bg-[#fffdf9] overflow-hidden">
-      
+
 //       {/* ── Background Decoration ── */}
 //       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-[#3d1f00]/5 z-0" />
-      
+
 //       <div className="container mx-auto px-6 max-w-[1200px] relative z-10">
-        
+
 //         {/* ── Journey Intro ── */}
 //         <div className="grid lg:grid-cols-2 gap-16 mb-32 items-center">
 //           <motion.div
@@ -107,31 +107,31 @@
 //             </h2>
 //             <div className="space-y-6 text-lg text-[#9c6644] leading-relaxed">
 //               <p>
-//                 From being an industrial manufacturing powerhouse to entering the FMCG space, 
+//                 From being an industrial manufacturing powerhouse to entering the FMCG space,
 //                 Suntek Group’s journey has been defined by evolution with purpose.
 //               </p>
 //               <p className="p-6 bg-[#fde8c0]/30 rounded-2xl border-l-4 border-[#c05621]">
-//                 Recognising India’s growing demand for high-quality products, we brought our 
+//                 Recognising India’s growing demand for high-quality products, we brought our
 //                 operational excellence to everyday consumer delights.
 //               </p>
 //             </div>
 //           </motion.div>
 
-//           <motion.div 
+//           <motion.div
 //             initial={{ opacity: 0, scale: 0.8 }}
 //             whileInView={{ opacity: 1, scale: 1 }}
 //             viewport={{ once: true }}
 //             className="relative"
 //           >
 //             <div className="aspect-square rounded-[3rem] overflow-hidden rotate-3 shadow-2xl border-[12px] border-white">
-//               <img 
-//                 src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?q=80&w=1000&auto=format&fit=crop" 
-//                 alt="Journey" 
+//               <img
+//                 src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?q=80&w=1000&auto=format&fit=crop"
+//                 alt="Journey"
 //                 className="w-full h-full object-cover"
 //               />
 //             </div>
 //             {/* Quote Badge */}
-//             <motion.div 
+//             <motion.div
 //               animate={{ y: [0, -10, 0] }}
 //               transition={{ duration: 4, repeat: Infinity }}
 //               className="absolute -bottom-10 -right-6 lg:right-10 bg-[#3d1f00] text-white p-8 rounded-3xl max-w-[240px] shadow-2xl"
@@ -145,7 +145,7 @@
 
 //         {/* ── Philosophy Section ── */}
 //         <div className="text-center mb-20">
-//           <motion.h2 
+//           <motion.h2
 //             initial={{ opacity: 0, y: 20 }}
 //             whileInView={{ opacity: 1, y: 0 }}
 //             className="text-4xl lg:text-5xl font-black text-[#3d1f00] font-['Playfair_Display'] mb-4"
@@ -162,7 +162,7 @@
 //         </div>
 
 //         {/* ── The "Trust" Footer ── */}
-//         <motion.div 
+//         <motion.div
 //           initial={{ opacity: 0, y: 40 }}
 //           whileInView={{ opacity: 1, y: 0 }}
 //           viewport={{ once: true }}
@@ -170,10 +170,10 @@
 //         >
 //           {/* Decorative Background Sun */}
 //           <div className="absolute -top-24 -right-24 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl" />
-          
+
 //           <h3 className="text-3xl font-['Playfair_Display'] text-white mb-6">Built on Consistency</h3>
 //           <p className="text-orange-100/70 max-w-2xl mx-auto leading-relaxed mb-8">
-//             At Sun Delight, we believe that trust is built not by claims, but by consistency. 
+//             At Sun Delight, we believe that trust is built not by claims, but by consistency.
 //             Our strong process control is backed by Suntek’s decades of manufacturing expertise.
 //           </p>
 //           <div className="flex flex-wrap justify-center gap-8 opacity-50 grayscale invert">
@@ -185,7 +185,7 @@
 //       </div>
 
 //       {/* ── Scroll Progress Line ── */}
-//       <motion.div 
+//       <motion.div
 //         style={{ scaleY }}
 //         className="fixed top-0 right-4 w-1 h-full bg-gradient-to-b from-transparent via-[#c05621] to-transparent origin-top hidden lg:block"
 //       />
@@ -210,26 +210,26 @@ const PILLARS = [
     title: "Quality",
     icon: "✨",
     desc: "Carefully selected raw materials meeting stringent quality checks for a standardized, premium taste.",
-    details: ["Raw Materials", "Quality Checks", "Standard Recipes"]
+    details: ["Raw Materials", "Quality Checks", "Standard Recipes"],
   },
   {
     title: "Price",
     icon: "🏷️",
     desc: "Efficient manufacturing enables competitive pricing and honest value without compromise.",
-    details: ["Efficiency", "Honest Value", "Competitive"]
+    details: ["Efficiency", "Honest Value", "Competitive"],
   },
   {
     title: "Packaging",
     icon: "🛡️",
     desc: "Hygienic and secure packaging designed to preserve crunch and sunshine-freshness.",
-    details: ["Hygienic", "Freshness", "Retail Ready"]
+    details: ["Hygienic", "Freshness", "Retail Ready"],
   },
   {
     title: "Consistency",
     icon: "🔄",
     desc: "Same taste. Same crunch. Every pack, every time, backed by Suntek's industrial expertise.",
-    details: ["Uniformity", "Process Control", "Expertise"]
-  }
+    details: ["Uniformity", "Process Control", "Expertise"],
+  },
 ];
 
 export default function JourneySection() {
@@ -246,47 +246,59 @@ export default function JourneySection() {
         scrollTrigger: {
           trigger: ".journey-title",
           start: "top 80%",
-        }
+        },
       });
     });
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={containerRef} className="relative bg-[#fffdf9] py-24  lg:py-0">
+    <section
+      ref={containerRef}
+      className="relative bg-[#fffdf9] py-24  lg:py-0"
+    >
       <div className="flex flex-col lg:flex-row min-h-screen">
-        
         {/* ── Left Side: Sticky Content (Hero of the Section) ── */}
-        <div className="lg:w-[45%] lg:h-screen lg:sticky lg:top-10 flex flex-col justify-center px-8 lg:px-20 py-12 bg-white z-20">
+        <div className="lg:w-[45%] lg:h-screen lg:sticky lg:top-6 flex flex-col justify-center px-8 lg:px-20 py-12 bg-white z-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="mb-6"
           >
-            <span className="text-[#c05621] font-bold tracking-[0.4em] uppercase text-xs">Our Evolution</span>
+            <span className="text-[#c05621] font-bold tracking-[0.4em] uppercase text-xs">
+              Our Evolution
+            </span>
           </motion.div>
 
-          <h2 className="journey-title text-6xl lg:text-8xl font-black text-[#3d1f00] font-['Playfair_Display'] leading-[0.9] mb-8">
+          <h2 className="journey-title text-6xl lg:text-7xl font-black text-[#3d1f00] font-['Playfair_Display'] leading-[0.9] mb-8">
             Our <br /> <span className="text-[#c05621] italic">Journey.</span>
           </h2>
 
           <div className="space-y-6 text-lg text-[#9c6644] leading-relaxed max-w-md">
             <p>
-              From an industrial powerhouse to the FMCG space, Suntek Group’s journey is defined by 
-              <span className="text-[#3d1f00] font-semibold"> evolution with purpose.</span>
+              The journey of Sundelight began with a vision to expand Suntek
+              Group&apos;s legacy{" "}
+              <span className="text-[#3d1f00] font-semibold">
+                {" "}
+                into the food industry.
+              </span>
             </p>
             <p className="text-base opacity-80">
-              Recognizing India’s demand for high-quality, hygienic biscuits, we’ve brought our 
-              operational excellence to your tea-time.
+              With strong manufacturing expertise, a focus on quality, and a
+              passion for great taste, Sundelight aims to become a trusted
+              biscuit brand in households across India and beyond.
             </p>
           </div>
 
           {/* Vision Box */}
-          <div className="mt-12 p-8 rounded-2xl bg-[#fff8f0] border-l-4 border-[#c05621] relative overflow-hidden group">
-             <div className="absolute -right-4 -bottom-4 text-7xl opacity-5 group-hover:scale-110 transition-transform">🍪</div>
-             <p className="text-[#3d1f00] font-['Playfair_Display'] text-xl italic font-medium leading-snug">
-               "To create biscuits that combine great taste, consistent quality, and honest value."
-             </p>
+          <div className="mt-8 p-7 rounded-2xl bg-[#fff8f0] border-l-4 border-[#c05621] relative overflow-hidden group">
+            <div className="absolute -right-4 -bottom-4 text-7xl opacity-5 group-hover:scale-110 transition-transform">
+              🍪
+            </div>
+            <p className="text-[#3d1f00] font-['Playfair_Display'] text-xl italic font-medium leading-snug">
+              "To create biscuits that combine great taste, consistent quality,
+              and honest value."
+            </p>
           </div>
         </div>
 
@@ -306,14 +318,19 @@ export default function JourneySection() {
           ))}
 
           {/* Final Trust Statement */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="pt-20 border-t border-[#3d1f00]/10 text-center lg:text-left"
           >
-            <p className="text-[#9c6644] text-sm uppercase tracking-[0.2em] mb-4">The Promise</p>
+            <p className="text-[#9c6644] text-sm uppercase tracking-[0.2em] mb-4">
+              The Promise
+            </p>
             <h4 className="text-3xl lg:text-4xl font-['Playfair_Display'] text-[#3d1f00] leading-tight">
-              Trust is built not by claims, but by <span className="text-[#c05621] font-black underline decoration-[#fde8c0] underline-offset-8">consistency.</span>
+              Trust is built not by claims, but by{" "}
+              <span className="text-[#c05621] font-black underline decoration-[#fde8c0] underline-offset-8">
+                consistency.
+              </span>
             </h4>
           </motion.div>
         </div>
@@ -326,7 +343,13 @@ export default function JourneySection() {
 }
 
 // ─── Pillar Card Component ────────────────────────────────────────────────────
-function PillarCard({ pillar, index }: { pillar: typeof PILLARS[0], index: number }) {
+function PillarCard({
+  pillar,
+  index,
+}: {
+  pillar: (typeof PILLARS)[0];
+  index: number;
+}) {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { margin: "-20% 0px", once: false });
 
@@ -354,11 +377,11 @@ function PillarCard({ pillar, index }: { pillar: typeof PILLARS[0], index: numbe
         <p className="text-[#9c6644] leading-relaxed mb-6 max-w-lg">
           {pillar.desc}
         </p>
-        
+
         <div className="flex flex-wrap gap-2">
           {pillar.details.map((detail, i) => (
-            <span 
-              key={i} 
+            <span
+              key={i}
               className="px-4 py-1.5 rounded-full bg-white border border-[#3d1f00]/5 text-[10px] font-bold uppercase tracking-widest text-[#3d1f00] shadow-sm"
             >
               {detail}

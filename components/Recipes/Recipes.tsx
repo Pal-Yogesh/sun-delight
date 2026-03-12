@@ -602,17 +602,19 @@ export default function RecipesSection() {
               className="font-['Playfair_Display'] text-[clamp(2.2rem,4.5vw,4.2rem)] 
             font-black text-[#3d1f00] leading-[1.07] tracking-[-0.02em] mb-[14px]"
             >
-              Cookie <em className="text-[#c05621] italic">Recipes</em>
+              
+              Tea Time Dessert with <br /> <em className="text-[#c05621] italic">Sundelight Cookies </em>
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={headerInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2, duration: 0.74 }}
-              className="text-[#9c6644] text-[0.95rem] leading-[1.82] max-w-[480px] mx-auto"
+              className="text-[#9c6644] text-[0.95rem] leading-[1.82] max-w-[480px] lg:max-w-[500px] mx-auto"
             >
-              Four delicious ways to use your favourite Sun Delight biscuits —
-              from no-bake truffles to a homemade cookie butter spread.
+             Crush Sundelight cookies and layer them with whipped cream and fruits to create a quick and delicious dessert perfect for family gatherings. 
+<br />
+You can also use Sundelight cookies to make biscuit cakes, milkshakes, and sweet treats at home. 
             </motion.p>
           </div>
 

@@ -42,8 +42,7 @@ export default function OneBite() {
                   <span className="text-brand-secondary">Wanting More</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-body mb-8 max-w-xl">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar.
+                 With strong manufacturing expertise, a focus on quality, and a passion for great taste, Sundelight aims to become a trusted biscuit brand in households across India and beyond. 
                 </p>
 
                 <Link href="/recipes">

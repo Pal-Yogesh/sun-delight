@@ -7,23 +7,28 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
     {
         id: 1,
-        question: "Do you offer vegan or gluten-free options?",
-        answer: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast.",
+        question: "What ingredients are used in Sundelight biscuits?",
+        answer: "We use high-quality ingredients such as premium wheat flour, butter, sugar, and natural flavors.",
     },
     {
         id: 2,
-        question: "How long do the cookies stay fresh?",
-        answer: "Our cookies are baked fresh daily with no preservatives. They maintain their optimal freshness and gooey texture for up to 3-5 days when stored in an airtight container at room temperature. You can also freeze them for up to 3 months!",
+        question: "Are Sundelight biscuits safe and hygienic?",
+        answer: "Yes. Our biscuits are manufactured in modern facilities following strict food safety and hygiene standards.",
     },
     {
         id: 3,
-        question: "Do you ship internationally?",
-        answer: "Currently, we only ship nationwide. We are working hard to expand our logistics to bring freshly baked happiness to cookie lovers worldwide very soon!",
+        question: "Where can I buy Sundelight biscuits?",
+        answer: "Our products are available through distributors, retailers, and online platforms.",
     },
     {
         id: 4,
-        question: "Can I customize an order for events or parties?",
-        answer: "Absolutely! We love catering to special events. Please contact us through the 'Grow With Us' page at least 2 weeks in advance to discuss custom flavors, packaging, and volume discounts.",
+        question: "How can I become a distributor or dealer?",
+        answer: "You can apply through the \"Become a Dealer\" page on our website.",
+    },
+    {
+        id: 5,
+        question: "Do you export your products?",
+        answer: "Yes, we are working towards expanding Sundelight to international markets.",
     },
 ];
 

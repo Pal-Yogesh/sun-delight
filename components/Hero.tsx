@@ -19,7 +19,14 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 const ease1 = [0.22, 1, 0.36, 1] as const;
 
 // ── Ticker ────────────────────────────────────────────────────────────────────
-const TAGS = ["Gourmet Treats", "Crafted With Love", "Perfect Bites", "Cookies Bite", "Food & Snack", "Delicious"];
+const TAGS = [
+  "Gourmet Treats",
+  "Crafted With Love",
+  "Perfect Bites",
+  "Cookies Bite",
+  "Food & Snack",
+  "Delicious",
+];
 
 function Ticker() {
   return (
@@ -93,10 +100,14 @@ export default function HeroVideo() {
         split.chars,
         { opacity: 0, y: 40, rotateX: -80, transformOrigin: "0% 50% -40px" },
         {
-          opacity: 1, y: 0, rotateX: 0,
-          stagger: 0.022, duration: 0.8,
-          ease: "power4.out", delay: 0.1,
-        }
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          stagger: 0.022,
+          duration: 0.8,
+          ease: "power4.out",
+          delay: 0.1,
+        },
       );
       // Scroll blur-out
       gsap.to(headingRef.current, {
@@ -135,7 +146,10 @@ export default function HeroVideo() {
             className="w-full h-full object-cover"
             style={{ filter: "saturate(1.1) brightness(0.7)" }}
           >
-            <source src="/Luxury_Chocolate_Cookie_Animation.mp4" type="video/mp4" />
+            <source
+              src="/Luxury_Chocolate_Cookie_Animation.mp4"
+              type="video/mp4"
+            />
           </video>
         </motion.div>
       </motion.div>
@@ -150,7 +164,11 @@ export default function HeroVideo() {
           >
             <motion.div
               animate={{ x: ["-100%", "100%"] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-[#F5A623]/8 to-transparent -skew-x-12"
             />
           </motion.div>
@@ -165,7 +183,10 @@ export default function HeroVideo() {
       {/* Radial vignette */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(10,4,0,0.65) 100%)" }}
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(10,4,0,0.65) 100%)",
+        }}
       />
 
       {/* ── TICKER ── */}
@@ -216,14 +237,19 @@ export default function HeroVideo() {
                 style={{
                   fontFamily: "Playfair Display, serif",
                   fontWeight: 900,
-                  fontSize: "clamp(2.4rem, 5.5vw, 5.5rem)",
+                  fontSize: "clamp(2rem, 5vw, 5rem)",
                   perspective: "1000px",
                 }}
               >
-                Freshly Baked{" "}
-                <em className="not-italic" style={{ color: "#F5A623" }}>Happiness</em>
+                Sundelight &nbsp;
+                <em className="not-italic" style={{ color: "#F5A623" }}>
+                  India&apos;s bite
+                </em>
                 <br />
-                in Every Bite.
+                India&apos;s{" "}
+                <em className="not-italic" style={{ color: "#F5A623" }}>
+                  favourite biscuit{" "}
+                </em>
               </h1>
 
               {/* Sub-text */}
@@ -234,8 +260,7 @@ export default function HeroVideo() {
                 className="text-[#fffdf9]/60 text-sm md:text-base leading-relaxed mb-9 max-w-[420px]"
                 style={{ fontFamily: "DM Sans, sans-serif" }}
               >
-                Handcrafted with premium ingredients, baked fresh daily —
-                every cookie is a moment of pure joy.
+           Bringing smiles to every home with delicious biscuits made from quality ingredients, trusted manufacturing, and a passion for great taste. 
               </motion.p>
 
               {/* CTA Row */}
@@ -303,9 +328,18 @@ export default function HeroVideo() {
       >
         <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
           <defs>
-            <path id="circle-path" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" />
+            <path
+              id="circle-path"
+              d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"
+            />
           </defs>
-          <path d="M50 5 A45 45 0 1 1 49.99 5" stroke="#F5A623" strokeWidth="1" strokeDasharray="4 6" fill="none" />
+          <path
+            d="M50 5 A45 45 0 1 1 49.99 5"
+            stroke="#F5A623"
+            strokeWidth="1"
+            strokeDasharray="4 6"
+            fill="none"
+          />
           <text fontSize="11" fill="#F5A623" fontFamily="serif">
             <textPath href="#circle-path" startOffset="0%">
               ☀ FRESHLY BAKED • SUN DELIGHT • PREMIUM •{" "}
@@ -338,7 +372,10 @@ function MagneticButton({
     x.set((e.clientX - rect.left - rect.width / 2) * 0.4);
     y.set((e.clientY - rect.top - rect.height / 2) * 0.4);
   };
-  const handleLeave = () => { x.set(0); y.set(0); };
+  const handleLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
     <motion.a
@@ -358,7 +395,12 @@ function MagneticButton({
         className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
         initial={{ x: "-100%" }}
         animate={{ x: "200%" }}
-        transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
+        transition={{
+          duration: 2.5,
+          repeat: Infinity,
+          repeatDelay: 2,
+          ease: "easeInOut",
+        }}
       />
       {children}
     </motion.a>

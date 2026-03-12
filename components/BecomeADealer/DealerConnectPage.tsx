@@ -94,7 +94,7 @@ export default function DealerConnectPage() {
           <div className="absolute bottom-10 right-[10%] w-[500px] h-[500px] bg-[#c05621]/10 rounded-full blur-[100px]" />
         </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10 max-w-[1300px] pt-7 sm:pt-0">
+        <div className="container mx-auto px-6 relative z-10 max-w-[1300px] pt-7 sm:pt-0 pb-5 lg:pb-10 ">
           <div className="max-w-[1000px]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -111,12 +111,18 @@ export default function DealerConnectPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl lg:text-[5rem] font-black leading-[0.9] font-['Playfair_Display'] mb-10"
+              className="text-4xl lg:text-[4.5rem] font-black leading-[0.9] font-['Playfair_Display'] mb-10"
             >
-              Partner with a Growing <br />
+              Join the 
+         
               <span className="text-[#c05621] italic">
-                FMCG Brand from the House of Suntek.
+                &nbsp;Sundelight distribution &nbsp;
               </span>
+              network and grow with a fast-growing
+              <span className="text-[#c05621] italic">
+              &nbsp; FMCG brand
+              </span>
+              
             </motion.h1>
 
             <motion.p
@@ -132,6 +138,24 @@ export default function DealerConnectPage() {
               are entering the FMCG space with a clear focus on quality,
               consistency, and nationwide reach.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mt-5 flex flex-wrap gap-3"
+            >
+              <span className="text-sm font-bold text-[#3d1f00] mt-2 mr-1">We offer:</span>
+              {["Strong product demand", "Competitive margins", "Marketing support", "Reliable supply"].map((item, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c05621]/8 border border-[#c05621]/15 text-[0.78rem] font-semibold text-[#6b3a1f]"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c05621] shrink-0" />
+                  {item}
+                </span>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -250,9 +274,10 @@ export default function DealerConnectPage() {
 
       <section className="py-16 md:py-0 container mx-auto px-4 sm:px-6 max-w-[1200px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          <div className="lg:sticky lg:top-32">
-            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black font-['Playfair_Display'] mb-6 lg:mb-8">
-              Who are <br className="hidden sm:block" /> we looking <br className="hidden sm:block" />{" "}
+          <div className="lg:sticky lg:top-20">
+            <h2 className="text-3xl sm:text-6xl  font-black font-['Playfair_Display'] mb-6 lg:mb-8">
+              Who are <br className="hidden sm:block" /> we looking{" "}
+              <br className="hidden sm:block" />{" "}
               <span className="text-[#c05621]">for?</span>
             </h2>
             <div className="space-y-4 sm:space-y-8">
@@ -274,7 +299,9 @@ export default function DealerConnectPage() {
 
           <div className="bg-white p-6 sm:p-8 lg:p-16 rounded-[2rem] sm:rounded-[3rem] lg:rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(61,31,0,0.1)] border border-[#3d1f00]/5">
             <div className="mb-8 lg:mb-12">
-              <h4 className="text-xl sm:text-2xl font-bold mb-2">Let&apos;s Connect</h4>
+              <h4 className="text-xl sm:text-2xl font-bold mb-2">
+                Let&apos;s Connect
+              </h4>
               <p className="text-[#9c6644] text-sm">
                 Fill in your business details below.
               </p>
@@ -299,7 +326,37 @@ export default function DealerConnectPage() {
                   className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-3 sm:py-4 outline-none focus:border-[#c05621] transition-colors"
                 />
                 <label className="absolute left-0 top-3 sm:top-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-5 sm:peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
-                  Firm Name
+                  Company Name
+                </label>
+              </div>
+              <div className="relative group">
+                <input
+                  type="email"
+                  placeholder=" "
+                  className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-3 sm:py-4 outline-none focus:border-[#c05621] transition-colors"
+                />
+                <label className="absolute left-0 top-3 sm:top-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-5 sm:peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
+                  Email
+                </label>
+              </div>
+              <div className="relative group">
+                <input
+                  type="number"
+                  placeholder=" "
+                  className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-3 sm:py-4 outline-none focus:border-[#c05621] transition-colors"
+                />
+                <label className="absolute left-0 top-3 sm:top-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-5 sm:peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
+                  Business Experience in Years
+                </label>
+              </div>
+              <div className="relative group">
+                <input
+                  type="text"
+                  placeholder=" "
+                  className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-3 sm:py-4 outline-none focus:border-[#c05621] transition-colors"
+                />
+                <label className="absolute left-0 top-3 sm:top-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-5 sm:peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
+                  Distribution Area
                 </label>
               </div>
 
@@ -322,12 +379,12 @@ export default function DealerConnectPage() {
                     className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-4 outline-none focus:border-[#c05621] transition-colors"
                   />
                   <label className="absolute left-0 top-4 text-sm font-bold uppercase tracking-widest text-[#9c6644]/50 pointer-events-none transition-all peer-focus:-top-6 peer-focus:text-[#c05621] peer-focus:text-[10px]">
-                    Mobile
+                    Phone Number
                   </label>
                 </div>
               </div>
 
-              <div className="relative group">
+              {/* <div className="relative group">
                 <select
                   defaultValue=""
                   className="peer w-full bg-transparent border-b-2 border-[#3d1f00]/10 py-4 outline-none focus:border-[#c05621] transition-colors text-sm font-bold uppercase tracking-widest appearance-none cursor-pointer text-[#3d1f00]"
@@ -341,7 +398,7 @@ export default function DealerConnectPage() {
                   <option>Modern Trade / Institutional Buyer</option>
                 </select>
                 <ChevronRight className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9c6644]/50 rotate-90 pointer-events-none" />
-              </div>
+              </div> */}
 
               <button className="w-full bg-[#c05621] text-white py-6 rounded-full font-black uppercase tracking-[0.3em] text-[10px] hover:bg-[#3d1f00] transition-colors shadow-2xl shadow-[#c05621]/20">
                 Submit Inquiry
