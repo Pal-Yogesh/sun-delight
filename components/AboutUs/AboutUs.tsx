@@ -165,6 +165,16 @@ export default function AboutHero() {
                       transition={{ duration: 0.3 }}
                       className="text-[#9c6644] text-sm leading-relaxed space-y-4"
                     >
+                      {/* Suntek Group Logo */}
+                      <div className="flex justify-center items-center">
+                        <Image
+                          src="/logo/Suntek.png"
+                          alt="Suntek Group"
+                          width={160}
+                          height={60}
+                          className="object-contain mb-2"
+                        />
+                      </div>
                       <p>
                         <strong className="text-[#3d1f00]">Sundelight:</strong>{" "}
                         It was born from a passion to create delicious biscuits
@@ -189,6 +199,16 @@ export default function AboutHero() {
                       transition={{ duration: 0.3 }}
                       className="text-[#9c6644] text-sm leading-relaxed space-y-4"
                     >
+                      {/* Suntek Group Logo */}
+                      <div className="flex justify-center items-center">
+                        <Image
+                          src="/logo/Suntek.png"
+                          alt="Suntek Group"
+                          width={160}
+                          height={60}
+                          className="object-contain mb-2"
+                        />
+                      </div>
                       {/* Suntek Group   */}
                       <p>
                         <strong className="text-[#3d1f00]">

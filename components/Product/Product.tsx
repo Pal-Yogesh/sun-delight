@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -664,7 +665,13 @@ export default function Product() {
                   : { color: "#6b3a1f" }
               }
             >
-              ☀️ Sun Delight
+              <Image
+                src="/logo-sun.png"
+                alt="sunzo"
+                width={1000}
+                height={1000}
+                className="w-28 cursor-pointer h-12 object-contain"
+              />
             </button>
             <button
               onClick={() => switchBrand("sz")}
@@ -672,14 +679,20 @@ export default function Product() {
               style={
                 !isSd
                   ? {
-                      background: "linear-gradient(135deg,#1a5c2a,#2d9e47)",
+                      background: "linear-gradient(135deg,#c05621,#ed8936)",
                       color: "#fff",
-                      boxShadow: "0 6px 22px rgba(26,92,42,.38)",
+                      boxShadow: "0 6px 22px rgba(192,86,33,.4)",
                     }
                   : { color: "#6b3a1f" }
               }
             >
-              🌿 Sunzo
+              <Image
+                src="/logo/sunzo.jpeg"
+                alt="sunzo"
+                width={1000}
+                height={1000}
+                className="w-24 h-12 object-cover cursor-pointer"
+              />
             </button>
           </div>
         </div>
